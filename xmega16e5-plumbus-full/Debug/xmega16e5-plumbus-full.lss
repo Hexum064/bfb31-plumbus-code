@@ -1,0 +1,472 @@
+
+xmega16e5-plumbus-full.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000302  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00802000  00802000  00000376  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000e  00802000  00802000  00000376  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000376  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000003a8  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000108  00000000  00000000  000003e8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00002375  00000000  00000000  000004f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00001d1c  00000000  00000000  00002865  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000008cb  00000000  00000000  00004581  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000170  00000000  00000000  00004e4c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000169e  00000000  00000000  00004fbc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000015a  00000000  00000000  0000665a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000098  00000000  00000000  000067b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 56 00 	jmp	0xac	; 0xac <__ctors_end>
+   4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+   8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+   c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  10:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  14:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  18:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  1c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  20:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  24:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  28:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  2c:	0c 94 75 00 	jmp	0xea	; 0xea <__vector_11>
+  30:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  34:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  38:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  3c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  40:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  44:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  48:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  4c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  50:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  54:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  58:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  5c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  60:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  64:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  68:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  6c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  70:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  74:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  78:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  7c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  80:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  84:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  88:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  8c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  90:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  94:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  98:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  9c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a0:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+
+000000ac <__ctors_end>:
+  ac:	11 24       	eor	r1, r1
+  ae:	1f be       	out	0x3f, r1	; 63
+  b0:	cf ef       	ldi	r28, 0xFF	; 255
+  b2:	cd bf       	out	0x3d, r28	; 61
+  b4:	d7 e2       	ldi	r29, 0x27	; 39
+  b6:	de bf       	out	0x3e, r29	; 62
+
+000000b8 <__do_copy_data>:
+  b8:	10 e2       	ldi	r17, 0x20	; 32
+  ba:	a0 e0       	ldi	r26, 0x00	; 0
+  bc:	b0 e2       	ldi	r27, 0x20	; 32
+  be:	e2 e0       	ldi	r30, 0x02	; 2
+  c0:	f3 e0       	ldi	r31, 0x03	; 3
+  c2:	02 c0       	rjmp	.+4      	; 0xc8 <__do_copy_data+0x10>
+  c4:	05 90       	lpm	r0, Z+
+  c6:	0d 92       	st	X+, r0
+  c8:	a0 30       	cpi	r26, 0x00	; 0
+  ca:	b1 07       	cpc	r27, r17
+  cc:	d9 f7       	brne	.-10     	; 0xc4 <__do_copy_data+0xc>
+
+000000ce <__do_clear_bss>:
+  ce:	20 e2       	ldi	r18, 0x20	; 32
+  d0:	a0 e0       	ldi	r26, 0x00	; 0
+  d2:	b0 e2       	ldi	r27, 0x20	; 32
+  d4:	01 c0       	rjmp	.+2      	; 0xd8 <.do_clear_bss_start>
+
+000000d6 <.do_clear_bss_loop>:
+  d6:	1d 92       	st	X+, r1
+
+000000d8 <.do_clear_bss_start>:
+  d8:	ae 30       	cpi	r26, 0x0E	; 14
+  da:	b2 07       	cpc	r27, r18
+  dc:	e1 f7       	brne	.-8      	; 0xd6 <.do_clear_bss_loop>
+  de:	0e 94 38 01 	call	0x270	; 0x270 <main>
+  e2:	0c 94 7f 01 	jmp	0x2fe	; 0x2fe <_exit>
+
+000000e6 <__bad_interrupt>:
+  e6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ea <__vector_11>:
+	
+	return 0;
+}
+
+ISR(TWIC_TWIM_vect)
+{
+  ea:	1f 92       	push	r1
+  ec:	0f 92       	push	r0
+  ee:	0f b6       	in	r0, 0x3f	; 63
+  f0:	0f 92       	push	r0
+  f2:	11 24       	eor	r1, r1
+  f4:	2f 93       	push	r18
+  f6:	3f 93       	push	r19
+  f8:	4f 93       	push	r20
+  fa:	5f 93       	push	r21
+  fc:	8f 93       	push	r24
+  fe:	9f 93       	push	r25
+ 100:	ef 93       	push	r30
+ 102:	ff 93       	push	r31
+	//If TWI arbitration is lost send STOP
+	
+	if(TWIC_MASTER_STATUS & (1<<TWI_MASTER_ARBLOST_bp))
+ 104:	80 91 84 04 	lds	r24, 0x0484	; 0x800484 <__TEXT_REGION_LENGTH__+0x7fb484>
+ 108:	83 ff       	sbrs	r24, 3
+ 10a:	03 c0       	rjmp	.+6      	; 0x112 <__vector_11+0x28>
+	{
+		TWIC_MASTER_CTRLC=(1<<TWI_MASTER_CMD1_bp)|(1<<TWI_MASTER_CMD0_bp); //send stop condition
+ 10c:	83 e0       	ldi	r24, 0x03	; 3
+ 10e:	80 93 83 04 	sts	0x0483, r24	; 0x800483 <__TEXT_REGION_LENGTH__+0x7fb483>
+	}
+	
+	//If TWI bus error flag is set or NACK received then send STOP
+	
+	if((TWIC_MASTER_STATUS & (1<<TWI_MASTER_BUSERR_bp))||(TWIC_MASTER_STATUS & (1<<TWI_MASTER_RXACK_bp)))
+ 112:	80 91 84 04 	lds	r24, 0x0484	; 0x800484 <__TEXT_REGION_LENGTH__+0x7fb484>
+ 116:	82 fd       	sbrc	r24, 2
+ 118:	04 c0       	rjmp	.+8      	; 0x122 <__vector_11+0x38>
+ 11a:	80 91 84 04 	lds	r24, 0x0484	; 0x800484 <__TEXT_REGION_LENGTH__+0x7fb484>
+ 11e:	84 ff       	sbrs	r24, 4
+ 120:	08 c0       	rjmp	.+16     	; 0x132 <__vector_11+0x48>
+	{
+		TWIC_MASTER_CTRLC=TWI_MASTER_CMD_STOP_gc; //send stop condition
+ 122:	e3 e8       	ldi	r30, 0x83	; 131
+ 124:	f4 e0       	ldi	r31, 0x04	; 4
+ 126:	83 e0       	ldi	r24, 0x03	; 3
+ 128:	80 83       	st	Z, r24
+		TWIC_MASTER_CTRLC=TWI_MASTER_BUSSTATE_IDLE_gc;
+ 12a:	81 e0       	ldi	r24, 0x01	; 1
+ 12c:	80 83       	st	Z, r24
+		twi_transfer_complete = 1;
+ 12e:	80 93 09 20 	sts	0x2009, r24	; 0x802009 <twi_transfer_complete>
+	}
+
+	if(twi_transfer_complete)
+ 132:	80 91 09 20 	lds	r24, 0x2009	; 0x802009 <twi_transfer_complete>
+ 136:	88 23       	and	r24, r24
+ 138:	31 f0       	breq	.+12     	; 0x146 <__vector_11+0x5c>
+	{
+		TWIC_MASTER_STATUS |= TWI_MASTER_WIF_bm;
+ 13a:	e4 e8       	ldi	r30, 0x84	; 132
+ 13c:	f4 e0       	ldi	r31, 0x04	; 4
+ 13e:	80 81       	ld	r24, Z
+ 140:	80 64       	ori	r24, 0x40	; 64
+ 142:	80 83       	st	Z, r24
+		return;
+ 144:	79 c0       	rjmp	.+242    	; 0x238 <__EEPROM_REGION_LENGTH__+0x38>
+	}
+	//If TWI write interrupt flag is set
+	
+	if(TWIC_MASTER_STATUS & (1<<TWI_MASTER_WIF_bp))
+ 146:	80 91 84 04 	lds	r24, 0x0484	; 0x800484 <__TEXT_REGION_LENGTH__+0x7fb484>
+ 14a:	86 ff       	sbrs	r24, 6
+ 14c:	47 c0       	rjmp	.+142    	; 0x1dc <__vector_11+0xf2>
+	{
+		if(!(TWIC_MASTER_STATUS & (1<<TWI_MASTER_RXACK_bp)))      //check whether acknowledge is received or not
+ 14e:	80 91 84 04 	lds	r24, 0x0484	; 0x800484 <__TEXT_REGION_LENGTH__+0x7fb484>
+ 152:	84 fd       	sbrc	r24, 4
+ 154:	43 c0       	rjmp	.+134    	; 0x1dc <__vector_11+0xf2>
+		{
+			if (twi_repeat_mode)
+ 156:	80 91 06 20 	lds	r24, 0x2006	; 0x802006 <twi_repeat_mode>
+ 15a:	88 23       	and	r24, r24
+ 15c:	c9 f0       	breq	.+50     	; 0x190 <__vector_11+0xa6>
+			{
+				if (twi_repeat_cmd_sent)
+ 15e:	80 91 03 20 	lds	r24, 0x2003	; 0x802003 <twi_repeat_cmd_sent>
+ 162:	88 23       	and	r24, r24
+ 164:	69 f0       	breq	.+26     	; 0x180 <__vector_11+0x96>
+				{
+					TWIC_MASTER_DATA=twi_repeat_data; //using the pointer as a normal variable	
+ 166:	80 91 0a 20 	lds	r24, 0x200A	; 0x80200a <twi_repeat_data>
+ 16a:	80 93 87 04 	sts	0x0487, r24	; 0x800487 <__TEXT_REGION_LENGTH__+0x7fb487>
+					twi_data_count++;
+ 16e:	80 91 07 20 	lds	r24, 0x2007	; 0x802007 <twi_data_count>
+ 172:	90 91 08 20 	lds	r25, 0x2008	; 0x802008 <twi_data_count+0x1>
+ 176:	01 96       	adiw	r24, 0x01	; 1
+ 178:	80 93 07 20 	sts	0x2007, r24	; 0x802007 <twi_data_count>
+ 17c:	90 93 08 20 	sts	0x2008, r25	; 0x802008 <twi_data_count+0x1>
+				}
+				{
+					TWIC_MASTER_DATA=twi_repeat_cmd;
+ 180:	80 91 0d 20 	lds	r24, 0x200D	; 0x80200d <twi_repeat_cmd>
+ 184:	80 93 87 04 	sts	0x0487, r24	; 0x800487 <__TEXT_REGION_LENGTH__+0x7fb487>
+					twi_repeat_cmd_sent = 1;
+ 188:	81 e0       	ldi	r24, 0x01	; 1
+ 18a:	80 93 03 20 	sts	0x2003, r24	; 0x802003 <twi_repeat_cmd_sent>
+ 18e:	15 c0       	rjmp	.+42     	; 0x1ba <__vector_11+0xd0>
+				}
+				
+			}
+			else
+			{
+				TWIC_MASTER_DATA=twi_data[twi_data_count++];	
+ 190:	20 91 0b 20 	lds	r18, 0x200B	; 0x80200b <twi_data>
+ 194:	30 91 0c 20 	lds	r19, 0x200C	; 0x80200c <twi_data+0x1>
+ 198:	80 91 07 20 	lds	r24, 0x2007	; 0x802007 <twi_data_count>
+ 19c:	90 91 08 20 	lds	r25, 0x2008	; 0x802008 <twi_data_count+0x1>
+ 1a0:	ac 01       	movw	r20, r24
+ 1a2:	4f 5f       	subi	r20, 0xFF	; 255
+ 1a4:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1a6:	40 93 07 20 	sts	0x2007, r20	; 0x802007 <twi_data_count>
+ 1aa:	50 93 08 20 	sts	0x2008, r21	; 0x802008 <twi_data_count+0x1>
+ 1ae:	f9 01       	movw	r30, r18
+ 1b0:	e8 0f       	add	r30, r24
+ 1b2:	f9 1f       	adc	r31, r25
+ 1b4:	80 81       	ld	r24, Z
+ 1b6:	80 93 87 04 	sts	0x0487, r24	; 0x800487 <__TEXT_REGION_LENGTH__+0x7fb487>
+			}
+			
+			
+			
+			if(twi_data_count == twi_no_of_bytes)
+ 1ba:	20 91 07 20 	lds	r18, 0x2007	; 0x802007 <twi_data_count>
+ 1be:	30 91 08 20 	lds	r19, 0x2008	; 0x802008 <twi_data_count+0x1>
+ 1c2:	80 91 04 20 	lds	r24, 0x2004	; 0x802004 <twi_no_of_bytes>
+ 1c6:	90 91 05 20 	lds	r25, 0x2005	; 0x802005 <twi_no_of_bytes+0x1>
+ 1ca:	28 17       	cp	r18, r24
+ 1cc:	39 07       	cpc	r19, r25
+ 1ce:	31 f4       	brne	.+12     	; 0x1dc <__vector_11+0xf2>
+			{
+				TWIC_MASTER_CTRLC=TWI_MASTER_CMD_STOP_gc; //send stop condition if all bytes are transferred
+ 1d0:	83 e0       	ldi	r24, 0x03	; 3
+ 1d2:	80 93 83 04 	sts	0x0483, r24	; 0x800483 <__TEXT_REGION_LENGTH__+0x7fb483>
+ 				
+				twi_transfer_complete=1;
+ 1d6:	81 e0       	ldi	r24, 0x01	; 1
+ 1d8:	80 93 09 20 	sts	0x2009, r24	; 0x802009 <twi_transfer_complete>
+		}
+	}
+	
+	//If RTC read interrupt flag is set
+	
+	if(TWIC_MASTER_STATUS & (1<<TWI_MASTER_RIF_bp))          //check whether read interrupt flag is set or not
+ 1dc:	80 91 84 04 	lds	r24, 0x0484	; 0x800484 <__TEXT_REGION_LENGTH__+0x7fb484>
+ 1e0:	88 23       	and	r24, r24
+ 1e2:	54 f5       	brge	.+84     	; 0x238 <__EEPROM_REGION_LENGTH__+0x38>
+	{
+		twi_data[twi_data_count++]=TWIC_MASTER_DATA;
+ 1e4:	20 91 0b 20 	lds	r18, 0x200B	; 0x80200b <twi_data>
+ 1e8:	30 91 0c 20 	lds	r19, 0x200C	; 0x80200c <twi_data+0x1>
+ 1ec:	80 91 07 20 	lds	r24, 0x2007	; 0x802007 <twi_data_count>
+ 1f0:	90 91 08 20 	lds	r25, 0x2008	; 0x802008 <twi_data_count+0x1>
+ 1f4:	ac 01       	movw	r20, r24
+ 1f6:	4f 5f       	subi	r20, 0xFF	; 255
+ 1f8:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1fa:	40 93 07 20 	sts	0x2007, r20	; 0x802007 <twi_data_count>
+ 1fe:	50 93 08 20 	sts	0x2008, r21	; 0x802008 <twi_data_count+0x1>
+ 202:	f9 01       	movw	r30, r18
+ 204:	e8 0f       	add	r30, r24
+ 206:	f9 1f       	adc	r31, r25
+ 208:	20 91 87 04 	lds	r18, 0x0487	; 0x800487 <__TEXT_REGION_LENGTH__+0x7fb487>
+ 20c:	20 83       	st	Z, r18
+		
+		if(twi_data_count == twi_no_of_bytes)
+ 20e:	20 91 07 20 	lds	r18, 0x2007	; 0x802007 <twi_data_count>
+ 212:	30 91 08 20 	lds	r19, 0x2008	; 0x802008 <twi_data_count+0x1>
+ 216:	80 91 04 20 	lds	r24, 0x2004	; 0x802004 <twi_no_of_bytes>
+ 21a:	90 91 05 20 	lds	r25, 0x2005	; 0x802005 <twi_no_of_bytes+0x1>
+ 21e:	28 17       	cp	r18, r24
+ 220:	39 07       	cpc	r19, r25
+ 222:	39 f4       	brne	.+14     	; 0x232 <__EEPROM_REGION_LENGTH__+0x32>
+		{
+			TWIC_MASTER_CTRLC=(1<<TWI_MASTER_ACKACT_bp)|(1<<TWI_MASTER_CMD1_bp)|(1<<TWI_MASTER_CMD0_bp); //send NACK and stop condition if all bytes are transferred
+ 224:	87 e0       	ldi	r24, 0x07	; 7
+ 226:	80 93 83 04 	sts	0x0483, r24	; 0x800483 <__TEXT_REGION_LENGTH__+0x7fb483>
+			
+			twi_transfer_complete=1;
+ 22a:	81 e0       	ldi	r24, 0x01	; 1
+ 22c:	80 93 09 20 	sts	0x2009, r24	; 0x802009 <twi_transfer_complete>
+ 230:	03 c0       	rjmp	.+6      	; 0x238 <__EEPROM_REGION_LENGTH__+0x38>
+		}
+		else
+		{
+			TWIC_MASTER_CTRLC=(1<<TWI_MASTER_CMD1_bp)|(0<<TWI_MASTER_CMD0_bp); //send acknowledge
+ 232:	82 e0       	ldi	r24, 0x02	; 2
+ 234:	80 93 83 04 	sts	0x0483, r24	; 0x800483 <__TEXT_REGION_LENGTH__+0x7fb483>
+		}
+	}
+}
+ 238:	ff 91       	pop	r31
+ 23a:	ef 91       	pop	r30
+ 23c:	9f 91       	pop	r25
+ 23e:	8f 91       	pop	r24
+ 240:	5f 91       	pop	r21
+ 242:	4f 91       	pop	r20
+ 244:	3f 91       	pop	r19
+ 246:	2f 91       	pop	r18
+ 248:	0f 90       	pop	r0
+ 24a:	0f be       	out	0x3f, r0	; 63
+ 24c:	0f 90       	pop	r0
+ 24e:	1f 90       	pop	r1
+ 250:	18 95       	reti
+
+00000252 <start_up>:
+
+
+
+void start_up()
+{
+	switch(get_start_mode())
+ 252:	0e 94 43 01 	call	0x286	; 0x286 <get_start_mode>
+ 256:	85 30       	cpi	r24, 0x05	; 5
+ 258:	19 f0       	breq	.+6      	; 0x260 <start_up+0xe>
+ 25a:	86 30       	cpi	r24, 0x06	; 6
+ 25c:	21 f0       	breq	.+8      	; 0x266 <start_up+0x14>
+ 25e:	05 c0       	rjmp	.+10     	; 0x26a <start_up+0x18>
+		case GAME_HARD_sm:
+			break;
+		case NYAN_sm:
+			break;
+		case PORTAL_sm:
+			if (get_allow_portal())
+ 260:	0e 94 3d 01 	call	0x27a	; 0x27a <get_allow_portal>
+			{
+				
+			}
+			break;
+ 264:	02 c0       	rjmp	.+4      	; 0x26a <start_up+0x18>
+		case EASER_EGG_sm:
+			if (get_allow_easter_egg())
+ 266:	0e 94 40 01 	call	0x280	; 0x280 <get_allow_easter_egg>
+				
+			}
+			break;			
+	}
+	
+	reset_start_mode();
+ 26a:	0e 94 46 01 	call	0x28c	; 0x28c <reset_start_mode>
+ 26e:	08 95       	ret
+
+00000270 <main>:
+}
+
+int main(void)
+{
+	start_mode_init();
+ 270:	0e 94 4e 01 	call	0x29c	; 0x29c <start_mode_init>
+	start_up();
+ 274:	0e 94 29 01 	call	0x252	; 0x252 <start_up>
+ 278:	ff cf       	rjmp	.-2      	; 0x278 <main+0x8>
+
+0000027a <get_allow_portal>:
+}
+
+void enable_wdt()
+{
+	CCP = CCP_IOREG_gc;
+	WDT_CTRL = WDT_ENABLE_bm | WDT_CEN_bm;
+ 27a:	80 91 01 20 	lds	r24, 0x2001	; 0x802001 <allow_portal>
+ 27e:	08 95       	ret
+
+00000280 <get_allow_easter_egg>:
+ 280:	80 91 00 20 	lds	r24, 0x2000	; 0x802000 <__DATA_REGION_ORIGIN__>
+ 284:	08 95       	ret
+
+00000286 <get_start_mode>:
+ 286:	80 91 02 20 	lds	r24, 0x2002	; 0x802002 <start_mode>
+ 28a:	08 95       	ret
+
+0000028c <reset_start_mode>:
+ 28c:	60 e0       	ldi	r22, 0x00	; 0
+ 28e:	81 e0       	ldi	r24, 0x01	; 1
+ 290:	90 e0       	ldi	r25, 0x00	; 0
+ 292:	0e 94 69 01 	call	0x2d2	; 0x2d2 <eeprom_write_byte>
+ 296:	10 92 02 20 	sts	0x2002, r1	; 0x802002 <start_mode>
+ 29a:	08 95       	ret
+
+0000029c <start_mode_init>:
+}
+
+void start_mode_init()
+{
+	start_mode = eeprom_read_byte((uint8_t*)1);
+ 29c:	81 e0       	ldi	r24, 0x01	; 1
+ 29e:	90 e0       	ldi	r25, 0x00	; 0
+ 2a0:	0e 94 61 01 	call	0x2c2	; 0x2c2 <eeprom_read_byte>
+ 2a4:	80 93 02 20 	sts	0x2002, r24	; 0x802002 <start_mode>
+	allow_portal = eeprom_read_byte((uint8_t*)2);
+ 2a8:	82 e0       	ldi	r24, 0x02	; 2
+ 2aa:	90 e0       	ldi	r25, 0x00	; 0
+ 2ac:	0e 94 61 01 	call	0x2c2	; 0x2c2 <eeprom_read_byte>
+ 2b0:	80 93 01 20 	sts	0x2001, r24	; 0x802001 <allow_portal>
+	allow_easter_egg = eeprom_read_byte((uint8_t*)3);
+ 2b4:	83 e0       	ldi	r24, 0x03	; 3
+ 2b6:	90 e0       	ldi	r25, 0x00	; 0
+ 2b8:	0e 94 61 01 	call	0x2c2	; 0x2c2 <eeprom_read_byte>
+ 2bc:	80 93 00 20 	sts	0x2000, r24	; 0x802000 <__DATA_REGION_ORIGIN__>
+ 2c0:	08 95       	ret
+
+000002c2 <eeprom_read_byte>:
+ 2c2:	03 d0       	rcall	.+6      	; 0x2ca <eeprom_mapen>
+ 2c4:	80 81       	ld	r24, Z
+ 2c6:	99 27       	eor	r25, r25
+ 2c8:	08 95       	ret
+
+000002ca <eeprom_mapen>:
+ 2ca:	fc 01       	movw	r30, r24
+ 2cc:	e0 50       	subi	r30, 0x00	; 0
+ 2ce:	f0 4f       	sbci	r31, 0xF0	; 240
+ 2d0:	08 95       	ret
+
+000002d2 <eeprom_write_byte>:
+ 2d2:	26 2f       	mov	r18, r22
+
+000002d4 <eeprom_write_r18>:
+ 2d4:	af 93       	push	r26
+ 2d6:	bf 93       	push	r27
+ 2d8:	e0 ec       	ldi	r30, 0xC0	; 192
+ 2da:	f1 e0       	ldi	r31, 0x01	; 1
+ 2dc:	37 85       	ldd	r19, Z+15	; 0x0f
+ 2de:	37 fd       	sbrc	r19, 7
+ 2e0:	fd cf       	rjmp	.-6      	; 0x2dc <eeprom_write_r18+0x8>
+ 2e2:	dc 01       	movw	r26, r24
+ 2e4:	a0 50       	subi	r26, 0x00	; 0
+ 2e6:	b0 4f       	sbci	r27, 0xF0	; 240
+ 2e8:	2c 93       	st	X, r18
+ 2ea:	25 e3       	ldi	r18, 0x35	; 53
+ 2ec:	22 87       	std	Z+10, r18	; 0x0a
+ 2ee:	28 ed       	ldi	r18, 0xD8	; 216
+ 2f0:	31 e0       	ldi	r19, 0x01	; 1
+ 2f2:	24 bf       	out	0x34, r18	; 52
+ 2f4:	33 87       	std	Z+11, r19	; 0x0b
+ 2f6:	01 96       	adiw	r24, 0x01	; 1
+ 2f8:	bf 91       	pop	r27
+ 2fa:	af 91       	pop	r26
+ 2fc:	08 95       	ret
+
+000002fe <_exit>:
+ 2fe:	f8 94       	cli
+
+00000300 <__stop_program>:
+ 300:	ff cf       	rjmp	.-2      	; 0x300 <__stop_program>
