@@ -5,7 +5,11 @@
  *  Author: Branden
  */ 
 
+#include <avr/io.h>
 #include "note_player.h"
+#include "sound_data.h"
+
+uint8_t decay_table_len = sizeof(expDecayVals);
 
 void note_timer_C5_init()
 {
@@ -55,12 +59,11 @@ void note_decay_init()
 	EDMA.CTRL = EDMA_ENABLE_bm; 	          // Enable, single buffer, round robin
 }
 
-void run_note_decay(uint8_t len)
-// data[] contains a lookup table of length (len)
+void run_note_decay()
 {
 	
-	EDMA.CH0.TRFCNT = len*2;                  // data array has len values
-	EDMA.CH0.ADDR = (uint16_t)exp_decay_vals;           // this is the source SRAM address
+	EDMA.CH0.TRFCNT = decay_table_len;                  // data array has len values
+	EDMA.CH0.ADDR = (uint16_t)expDecayVals;           // this is the source SRAM address
 	EDMA.CH0.CTRLA =
 	EDMA_CH_ENABLE_bm |               //   enable EDMA Ch0
 	EDMA_CH_SINGLE_bm |               //   one burst per trigger
@@ -69,17 +72,14 @@ void run_note_decay(uint8_t len)
 
 void note_play(uint8_t note_index)
 {
-	
-
-	PORTA.OUTSET = PIN3_bm;
 	TCC5.CCA = noteClocks[STARTING_NOTE_INDEX + note_index];
-	run_note_decay(13);
+	run_note_decay();
 	TCC5.CTRLA = TC_CLKSEL_DIV8_gc;// TC_CLKSEL_DIV1024_gc;
 }
 
 void reset_play()
 {
-	PORTA.OUTCLR = PIN3_bm;
+
 	EDMA.CH0.CTRLB |= EDMA_CH_TRNIF_bm;   // clear INT flag    // EDMA.INTFLAGS = EDMA_CH0TRNFIF_bm;    // alternate flag location also works
 	TCC5.CNT = 0;
 	TCC5.CTRLA = 0;// TC_CLKSEL_DIV1024_gc;
@@ -92,7 +92,7 @@ void note_player_init()
 	note_decay_init();
 }
 
-ISR(EDMA_CH0_vect)
+void note_interrupt_handler()
 {
 	reset_play();
 }

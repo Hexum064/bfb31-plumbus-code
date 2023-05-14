@@ -14,6 +14,8 @@
 
 #define BASE_MAX_MODE 4
 
+#define ALLOW_VAL 0x55
+
 #define STANDBY_sm 0
 #define FREEPLAY_sm 1
 #define GAME_EASY_sm 2
@@ -25,12 +27,12 @@
 
 
 void start_mode_init();
-void next_start_mode();
 uint8_t get_start_mode();
-void reset_start_mode();
+void reset_start_mode_in_eeprom();
 uint8_t get_allow_portal();
 void set_allow_portal(uint8_t allow);
 uint8_t get_allow_easter_egg();
 void set_allow_easter_egg(uint8_t allow);
+void next_start_mode();
 
 #endif /* START_MODE_H_ */

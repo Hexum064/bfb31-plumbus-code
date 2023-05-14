@@ -20,5 +20,6 @@
 void expander_init();
 uint8_t expander_read_port(uint8_t portAddr);
 uint16_t expander_read_ports();
+uint8_t get_val_changed();
 
 #endif /* IO_EXPANDER_H_ */

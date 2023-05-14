@@ -5,7 +5,15 @@
  *  Author: Branden
  */ 
 
+#ifndef F_CPU
+# define F_CPU 32000000UL
+#endif
+
 #include "song_player.h"
+#include <avr/io.h>
+#include <stdlib.h>
+#include <util/delay.h>
+#include "sound_data.h"
 
 uint8_t hasCh0Intro = 0;
 uint8_t hasCh0Main = 0;
@@ -44,7 +52,7 @@ uint8_t isCh1Intro = 0;
 
 void (*update_display_callback_ptr)();
 
-void timer_C4_init(uint16_t per)
+void beat_timer_C4_init(uint16_t per)
 {
 	//for 136 BMP and 1/16 note support, 64 prescl and 13787 clk
 	TCC4.CTRLB = TC_BYTEM_NORMAL_gc | TC_CIRCEN_DISABLE_gc | TC_WGMODE_NORMAL_gc;
@@ -182,26 +190,32 @@ void song_init()
 	
 }
 
-void load_track_into_mem(uint8_t * source, uint8_t * dest, uint16_t size)
+void load_track_into_mem(uint8_t * source, uint8_t ** dest, uint16_t size)
 {
-	dest = (uint8_t *)malloc(size);
+	*dest = (uint8_t *)malloc(size);
+	volatile uint8_t temp;
 	uint16_t i = 0;
 	for(;i<size;i++)
 	{
-		dest[i] = pgm_read_byte(source + i);
+		temp =pgm_read_byte(source + i);
+		(*dest)[i] = temp;
 	}
 }
 
-void song_player_init(struct SongInitParams params, void (*update_display_cb)())
+void song_player_init(SongInitParams initParams, void (*update_display_cb)())
 {
 	update_display_callback_ptr = update_display_cb;
 	
-	if (params.ch0.main.track_data)
+	beat_timer_C4_init(initParams.bmp_period);
+	note_0_timer_C5_init();
+	note_1_timer_D5_init();	
+	
+	if (initParams.ch0.main.track_data)
 	{
 		hasCh0Main = 1;
-		load_track_into_mem(params.ch0.main.track_data, ch0MainTrack, params.ch0.main.track_size);
-		load_track_into_mem(params.ch0.main.extension_data, ch0MainExt, params.ch0.main.extension_size);
-		ch0MainNoteCount = params.ch0.main.track_size;
+		load_track_into_mem(initParams.ch0.main.track_data, &ch0MainTrack, initParams.ch0.main.track_size);
+		load_track_into_mem(initParams.ch0.main.extension_data, &ch0MainExt, initParams.ch0.main.extension_size);
+		ch0MainNoteCount = initParams.ch0.main.track_size;
 		ch0NoteCount = ch0MainNoteCount;
 	}	
 	
@@ -209,30 +223,30 @@ void song_player_init(struct SongInitParams params, void (*update_display_cb)())
 	//information is present without the need for more conditionals	
 	
 	//First copy over data from progmem
-	if (params.ch0.intro.track_data)
+	if (initParams.ch0.intro.track_data)
 	{
 		hasCh0Intro = 1;
-		load_track_into_mem(params.ch0.intro.track_data, ch0IntroTrack, params.ch0.intro.track_size);
-		load_track_into_mem(params.ch0.intro.extension_data, ch0IntroExt, params.ch0.intro.extension_size);
-		ch0IntroNoteCount = params.ch0.intro.track_size;		
+		load_track_into_mem(initParams.ch0.intro.track_data, &ch0IntroTrack, initParams.ch0.intro.track_size);
+		load_track_into_mem(initParams.ch0.intro.extension_data, &ch0IntroExt, initParams.ch0.intro.extension_size);
+		ch0IntroNoteCount = initParams.ch0.intro.track_size;		
 		ch0NoteCount = ch0IntroNoteCount;
 	}
 	
-	if (params.ch1.main.track_data)
+	if (initParams.ch1.main.track_data)
 	{
 		hasCh1Main = 1;
-		load_track_into_mem(params.ch1.main.track_data, ch1MainTrack, params.ch1.main.track_size);
-		load_track_into_mem(params.ch1.main.extension_data, ch1MainExt, params.ch1.main.extension_size);
-		ch1MainNoteCount = params.ch1.main.track_size;
+		load_track_into_mem(initParams.ch1.main.track_data, &ch1MainTrack, initParams.ch1.main.track_size);
+		load_track_into_mem(initParams.ch1.main.extension_data, &ch1MainExt, initParams.ch1.main.extension_size);
+		ch1MainNoteCount = initParams.ch1.main.track_size;
 		ch1NoteCount = ch1MainNoteCount;
 	}
 	
-	if (params.ch1.intro.track_data)
+	if (initParams.ch1.intro.track_data)
 	{
 		hasCh1Intro = 1;
-		load_track_into_mem(params.ch1.intro.track_data, ch1IntroTrack, params.ch1.intro.track_size);
-		load_track_into_mem(params.ch1.intro.extension_data, ch1IntroExt, params.ch1.intro.extension_size);
-		ch1IntroNoteCount = params.ch1.intro.track_size;		
+		load_track_into_mem(initParams.ch1.intro.track_data, &ch1IntroTrack, initParams.ch1.intro.track_size);
+		load_track_into_mem(initParams.ch1.intro.extension_data, &ch1IntroExt, initParams.ch1.intro.extension_size);
+		ch1IntroNoteCount = initParams.ch1.intro.track_size;		
 		ch1NoteCount = ch1IntroNoteCount;
 	}
 	
@@ -246,10 +260,8 @@ void song_start()
 	TCC4.CTRLA = TC_CLKSEL_DIV256_gc;
 }
 
-
-ISR(TCC4_OVF_vect)
-{
-	PORTA.OUTSET = PIN2_bm;
+void song_interrupt_handler(){
+// 	PORTA.OUTSET = PIN2_bm;
 	TCC4.INTFLAGS = TC4_OVFIF_bm;
 
 	if (!(noteCh0BeatCount))
@@ -262,7 +274,7 @@ ISR(TCC4_OVF_vect)
 
 		if (noteCh0Index >= ch0NoteCount)
 		{
-			if (isCh0Intro && hasCh0Main)
+			if (isCh0Intro)// && hasCh0Main)
 			{
 				isCh0Intro = 0;
 				ch0NoteCount = ch0MainNoteCount;
@@ -315,8 +327,10 @@ ISR(TCC4_OVF_vect)
 		noteCh1BeatCount--;
 	}
 	
-	update_display_callback_ptr();		
+	update_display_callback_ptr();
 	_delay_ms(20);
 	TCC5.CTRLA = TC_CLKSEL_DIV8_gc;
 	TCD5.CTRLA = TC_CLKSEL_DIV8_gc;
 }
+
+

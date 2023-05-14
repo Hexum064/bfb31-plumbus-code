@@ -19,7 +19,7 @@ uint8_t get_allow_portal()
 void set_allow_portal(uint8_t allow)
 {
 	allow_portal = allow;
-	eeprom_write_byte((uint8_t *)2, allow_portal);
+	eeprom_write_byte((uint8_t *)2, allow_portal ? ALLOW_VAL : 0);
 }
 
 uint8_t get_allow_easter_egg()
@@ -30,7 +30,7 @@ uint8_t get_allow_easter_egg()
 void set_allow_easter_egg(uint8_t allow)
 {
 	allow_easter_egg = allow;
-	eeprom_write_byte((uint8_t *)3, allow_easter_egg);
+	eeprom_write_byte((uint8_t *)3, allow_easter_egg ? ALLOW_VAL : 0);
 }
 
 uint8_t get_start_mode()
@@ -38,10 +38,9 @@ uint8_t get_start_mode()
 	return start_mode;
 }
 
-void reset_start_mode()
+void reset_start_mode_in_eeprom()
 {
 	eeprom_write_byte((uint8_t *)1, 0);
-	start_mode = 0;
 }
 
 void enable_wdt()
@@ -52,7 +51,15 @@ void enable_wdt()
 
 void start_mode_init()
 {
+	
 	start_mode = eeprom_read_byte((uint8_t*)1);
+	
+	if (start_mode > BASE_MAX_MODE + 2)
+	{
+		start_mode = 0;
+		reset_start_mode_in_eeprom();
+	}
+	
 	allow_portal = eeprom_read_byte((uint8_t*)2);
 	allow_easter_egg = eeprom_read_byte((uint8_t*)3);
 	
@@ -70,11 +77,11 @@ void next_start_mode()
 		//This falls through if allow_porta is true, and allows the mode to
 		//be switched to Portal mode
 		
-		if (!(allow_portal) && !(allow_easter_egg))	
+		if ((allow_portal != ALLOW_VAL) && (allow_easter_egg != ALLOW_VAL))	
 		{
 			start_mode = 0;
 		}
-		else if (!(allow_portal) && (allow_easter_egg))
+		else if ((allow_portal != ALLOW_VAL) && (allow_easter_egg == ALLOW_VAL))
 		{
 			start_mode++;
 		}
@@ -83,7 +90,7 @@ void next_start_mode()
 	{				
 		//Just let this fall through if allow_easter_egg is true
 		//so we can switch to easter egg mode
-		if (!(allow_easter_egg))
+		if ((allow_easter_egg != ALLOW_VAL))
 		{
 			start_mode = 0;
 		}

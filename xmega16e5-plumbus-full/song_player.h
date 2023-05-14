@@ -8,36 +8,32 @@
 
 #ifndef SONG_PLAYER_H_
 #define SONG_PLAYER_H_
-
-#include <stdlib.h>
-#include <util/delay.h>
-#include <avr/pgmspace.h>
-#include "sound_data.h"
+#include <stdint-gcc.h>
 
 
-
-struct Track
+typedef struct songTrack
 {
 	uint8_t * track_data;
 	uint16_t track_size;
 	uint8_t * extension_data;	
 	uint16_t extension_size;
-};
+} Track;
 
-struct Channel
+typedef struct songChannel
 {
-	struct Track intro;
-	struct Track main;	
-};
+	Track intro;
+	Track main;	
+} Channel;
 
-struct SongInitParams
+typedef struct songInitParams
 {	
-	struct Channel ch0;
-	struct Channel ch1;	
+	Channel ch0;
+	Channel ch1;	
 	uint16_t bmp_period;
-};
+} SongInitParams;
 
-void song_player_init(struct SongInitParams params, void (*update_display_cb)());
+void song_player_init(SongInitParams initParams, void (*update_display_cb)());
 void song_start();
+void song_interrupt_handler();
 
 #endif /* SONG_PLAYER_H_ */

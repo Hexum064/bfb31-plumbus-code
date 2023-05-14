@@ -8,12 +8,12 @@
 
 #ifndef NOTE_PLAYER_H_
 #define NOTE_PLAYER_H_
-
-#include "sound_data.h"
+#include <stdint-gcc.h>
 
 #define STARTING_NOTE_INDEX 7
 
 void note_player_init();
 void note_play(uint8_t note_index);
+void note_interrupt_handler();
 
 #endif /* NOTE_PLAYER_H_ */
