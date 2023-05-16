@@ -19,44 +19,28 @@
 #include "sound_data.h"
 #include "io_expander.h"
 
+
+
 volatile uint16_t display_ctr = 0;
 volatile uint8_t note_played = 0;
 
 /***********LED test code start*************/
 
-volatile ws2812drv_led_t leds[50];
-
-uint8_t offset = 0;
-void test_load_leds()
-{
-	for (uint8_t i = 0; i < 50; i++)
-	{
-		leds[i].r = 0;
-		leds[i].g = 0;
-		leds[i].b = 0;
-		
-		switch((i + offset)%3)
-		{
-			case 0:
-			leds[i].r = 64;
-			break;
-			case 1:
-			leds[i].g = 64;
-			break;
-			case 2:
-			leds[i].b = 64;
-			break;
-		}
-	}
-	offset++;
-}
+volatile ws2812drv_led_t leds[LED_COUNT];
 
 /***********LED test code end*************/
 
 void update_display_song_play_cb()
 {
-	test_load_leds();
-	ws2812drv_start_transfer(leds, 50);
+	if (get_start_mode() == NYAN_sm)
+	{
+		play_lights_nyan(leds);
+	}
+	else
+	{
+		play_lights_portal(leds);	
+	}
+	ws2812drv_start_transfer(leds, LED_COUNT);
 }
 
 void clk_init()
@@ -166,10 +150,10 @@ void start_up(uint8_t mode)
 			params.ch0.main.track_size = sizeof(nyanMainTreble);
 			params.ch0.main.extension_data = nyanMainExtTreble;
 			params.ch0.main.extension_size = sizeof(nyanMainExtTreble);
-			params.ch1.intro.track_data = nyanIntroBase;
-			params.ch1.intro.track_size = sizeof(nyanIntroBase);
-			params.ch1.intro.extension_data = nyanIntroExtBase;
-			params.ch1.intro.extension_size = sizeof(nyanIntroExtBase);			
+			params.ch1.intro.track_data = nyanIntroBass;
+			params.ch1.intro.track_size = sizeof(nyanIntroBass);
+			params.ch1.intro.extension_data = nyanIntroExtBass;
+			params.ch1.intro.extension_size = sizeof(nyanIntroExtBass);			
 			params.ch1.main.track_data = nyanMainBass;
 			params.ch1.main.track_size = sizeof(nyanMainBass);
 			params.ch1.main.extension_data = nyanMainExtBass;
@@ -181,11 +165,31 @@ void start_up(uint8_t mode)
 			
 			break;
 		case PORTAL_sm:
-			if (get_allow_portal())
+		//TODO: remove test case
+			if (get_allow_portal() || 1)
 			{
 				song_out_init();
-				//TODO: set up for portal song
-				//song_player_init();
+				SongInitParams params;
+				params.bmp_period = portalBPMPeriod;
+				params.ch0.intro.track_data = portalIntroTreble;
+				params.ch0.intro.track_size = sizeof(portalIntroTreble);
+				params.ch0.intro.extension_data = portalIntroExtTreble;
+				params.ch0.intro.extension_size = sizeof(portalIntroExtTreble);
+				params.ch0.main.track_data = portalMainTreble;
+				params.ch0.main.track_size = sizeof(portalMainTreble);
+				params.ch0.main.extension_data = portalMainExtTreble;
+				params.ch0.main.extension_size = sizeof(portalMainExtTreble);
+				params.ch1.intro.track_data = portalIntroBass;
+				params.ch1.intro.track_size = sizeof(portalIntroBass);
+				params.ch1.intro.extension_data = portalIntroExtBass;
+				params.ch1.intro.extension_size = sizeof(portalIntroExtBass);
+				params.ch1.main.track_data = portalMainBass;
+				params.ch1.main.track_size = sizeof(portalMainBass);
+				params.ch1.main.extension_data = portalMainExtBass;
+				params.ch1.main.extension_size = sizeof(portalMainExtBass);
+			
+				song_player_init(params, update_display_song_play_cb);
+				song_start();
 						
 			}
 			break;
@@ -226,7 +230,7 @@ uint8_t get_note_buttons()
 	return ((~PORTA.IN) & 0xF0) >> 4;
 }
 
-void check_play_note()
+uint8_t check_play_note()
 {
 	uint8_t note_buttons = get_note_buttons();
 	uint8_t val_changed = get_val_changed();
@@ -242,10 +246,13 @@ void check_play_note()
 	{
 		note_played = 0;
 	}
+	
+	return note_buttons;
 }
 
 int main(void)
 {
+	uint8_t note_buttons;
 	
 	//Debug pin
 	PORTA.DIRSET = PIN3_bm;
@@ -280,13 +287,14 @@ int main(void)
 		
 		if (get_start_mode() == FREEPLAY_sm)
 		{
-			check_play_note();
+			note_buttons = check_play_note();
 			
 			//TEMP: Testing display stuff
 			if (display_ctr >= 10)
 			{
-				test_load_leds();
-				ws2812drv_start_transfer(leds, 50);
+				//Use the LED array, the last value from the dingle pos, and the note buttons
+				play_lights_free_play(leds, get_last_value(), note_buttons);
+				ws2812drv_start_transfer(leds, LED_COUNT);
 				display_ctr = 0;
 				
 			}			
