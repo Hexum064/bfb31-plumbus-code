@@ -50,12 +50,12 @@ uint16_t expander_read_ports()
 	
 }
 
-uint16_t get_last_value()
+uint16_t expander_get_last_value()
 {
 	return last_val;
 }
 
-uint8_t get_val_changed()
+uint8_t expander_get_val_changed()
 {
 	uint16_t val = expander_read_ports();
 	

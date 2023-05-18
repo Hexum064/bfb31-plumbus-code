@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+games.c
+
 i2c.c
 
 io_expander.c

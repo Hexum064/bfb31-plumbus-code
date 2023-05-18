@@ -1,27 +1,42 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodhi4.o)
-                              light_player.o (__divmodhi4)
+                              games.o (__divmodhi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_tablejump2.o)
                               main.o (__tablejump2__)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_copy_data.o)
-                              light_player.o (__do_copy_data)
+                              games.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_clear_bss.o)
-                              i2c.o (__do_clear_bss)
+                              games.o (__do_clear_bss)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodhi4.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodhi4.o) (__udivmodhi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
-                              song_player.o (malloc)
+                              games.o (malloc)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o)
+                              games.o (rand)
 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
                               start_mode.o (eeprom_read_byte)
 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
                               start_mode.o (eeprom_write_byte)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o) (__divmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o) (__negsi2)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o) (__muluhisi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o) (__mulohisi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o) (__udivmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o) (__umulhisi3)
 
 Allocating common symbols
 Common symbol       size              file
 
+sequence            0x2               games.o
 ch1IntroExt         0x2               song_player.o
 twi_repeat_cmd_sent
                     0x1               i2c.o
@@ -40,11 +55,12 @@ twi_repeat_data     0x1               i2c.o
 update_display_callback_ptr
                     0x2               song_player.o
 ch0IntroExt         0x2               song_player.o
-leds                0xa8              main.o
+leds                0xa8              light_player.o
 ch1MainTrack        0x2               song_player.o
 ch1IntroTrack       0x2               song_player.o
 ch1Track            0x2               song_player.o
 twi_data            0x2               i2c.o
+step                0x2               games.o
 ch0Track            0x2               song_player.o
 twi_repeat_cmd      0x1               i2c.o
 __flp               0x2               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
@@ -54,6 +70,15 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
+ .text          0x00000000        0x0 games.o
+ .data          0x00000000        0x0 games.o
+ .bss           0x00000000        0x0 games.o
+ .text.step_hard
+                0x00000000        0x2 games.o
+ .data.game_lost_notes
+                0x00000000        0x4 games.o
+ .data.easy_won_notes
+                0x00000000        0xc games.o
  .text          0x00000000        0x0 i2c.o
  .data          0x00000000        0x0 i2c.o
  .bss           0x00000000        0x0 i2c.o
@@ -66,7 +91,7 @@ Discarded input sections
  .data          0x00000000        0x0 light_player.o
  .bss           0x00000000        0x0 light_player.o
  .text.play_lights_standby
-                0x00000000       0x68 light_player.o
+                0x00000000       0xa0 light_player.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -181,12 +206,98 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodhi4.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o)
  .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
  .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
 
 Memory Configuration
 
@@ -203,6 +314,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
+LOAD games.o
 LOAD i2c.o
 LOAD io_expander.o
 LOAD light_player.o
@@ -320,7 +432,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1aa2
+.text           0x00000000     0x2036
  *(.vectors)
  .vectors       0x00000000       0xac C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
                 0x00000000                __vector_default
@@ -455,204 +567,252 @@ END GROUP
                 0x00000384                __vector_42
                 0x00000388                . = ALIGN (0x2)
  *(.text.*)
+ .text.step_easy
+                0x00000388      0x124 games.o
+                0x00000388                step_easy
+ .text.get_seed
+                0x000004ac       0x44 games.o
+                0x000004ac                get_seed
+ .text.easy_sequence_init
+                0x000004f0       0x5e games.o
+                0x000004f0                easy_sequence_init
+ .text.hard_sequence_init
+                0x0000054e       0x4e games.o
+                0x0000054e                hard_sequence_init
+ .text.games_init
+                0x0000059c       0x10 games.o
+                0x0000059c                games_init
+ .text.games_step
+                0x000005ac        0x6 games.o
+                0x000005ac                games_step
  .text.twi_init
-                0x00000388       0x28 i2c.o
-                0x00000388                twi_init
+                0x000005b2       0x28 i2c.o
+                0x000005b2                twi_init
  .text.twi_read
-                0x000003b0       0x34 i2c.o
-                0x000003b0                twi_read
+                0x000005da       0x34 i2c.o
+                0x000005da                twi_read
  .text.twi_write
-                0x000003e4       0x32 i2c.o
-                0x000003e4                twi_write
+                0x0000060e       0x32 i2c.o
+                0x0000060e                twi_write
  .text.__vector_11
-                0x00000416      0x168 i2c.o
-                0x00000416                __vector_11
+                0x00000640      0x168 i2c.o
+                0x00000640                __vector_11
  .text.expander_read_port
-                0x0000057e       0x38 io_expander.o
-                0x0000057e                expander_read_port
+                0x000007a8       0x38 io_expander.o
+                0x000007a8                expander_read_port
  .text.expander_read_ports
-                0x000005b6       0x1e io_expander.o
-                0x000005b6                expander_read_ports
+                0x000007e0       0x1e io_expander.o
+                0x000007e0                expander_read_ports
  .text.expander_init
-                0x000005d4       0x42 io_expander.o
-                0x000005d4                expander_init
- .text.get_last_value
-                0x00000616        0xa io_expander.o
-                0x00000616                get_last_value
- .text.get_val_changed
-                0x00000620       0x3c io_expander.o
-                0x00000620                get_val_changed
- .text.overlay_note_button_leds
-                0x0000065c       0xc2 light_player.o
-                0x0000065c                overlay_note_button_leds
+                0x000007fe       0x42 io_expander.o
+                0x000007fe                expander_init
+ .text.expander_get_last_value
+                0x00000840        0xa io_expander.o
+                0x00000840                expander_get_last_value
+ .text.expander_get_val_changed
+                0x0000084a       0x3c io_expander.o
+                0x0000084a                expander_get_val_changed
+ .text.play_lights_overlay_note_button_leds
+                0x00000886      0x13a light_player.o
+                0x00000886                play_lights_overlay_note_button_leds
  .text.overlay_dingle_pos
-                0x0000071e       0xa6 light_player.o
-                0x0000071e                overlay_dingle_pos
+                0x000009c0       0x9a light_player.o
+                0x000009c0                overlay_dingle_pos
  .text.play_lights_free_play
-                0x000007c4       0xb8 light_player.o
-                0x000007c4                play_lights_free_play
+                0x00000a5a       0xb0 light_player.o
+                0x00000a5a                play_lights_free_play
  .text.play_lights_nyan
-                0x0000087c      0x1ba light_player.o
-                0x0000087c                play_lights_nyan
+                0x00000b0a      0x206 light_player.o
+                0x00000b0a                play_lights_nyan
  .text.play_lights_portal
-                0x00000a36      0x118 light_player.o
-                0x00000a36                play_lights_portal
+                0x00000d10      0x156 light_player.o
+                0x00000d10                play_lights_portal
+ .text.play_lights_game
+                0x00000e66       0xfe light_player.o
+                0x00000e66                play_lights_game
  .text.update_display_song_play_cb
-                0x00000b4e       0x28 main.o
-                0x00000b4e                update_display_song_play_cb
+                0x00000f64       0x14 main.o
+                0x00000f64                update_display_song_play_cb
  .text.clk_init
-                0x00000b76       0x24 main.o
-                0x00000b76                clk_init
+                0x00000f78       0x24 main.o
+                0x00000f78                clk_init
  .text.interrupt_init
-                0x00000b9a        0x8 main.o
-                0x00000b9a                interrupt_init
- .text.io_init  0x00000ba2       0x32 main.o
-                0x00000ba2                io_init
+                0x00000f9c        0x8 main.o
+                0x00000f9c                interrupt_init
+ .text.io_init  0x00000fa4       0x32 main.o
+                0x00000fa4                io_init
  .text.note_buttons_init
-                0x00000bd4       0x1a main.o
-                0x00000bd4                note_buttons_init
+                0x00000fd6       0x1a main.o
+                0x00000fd6                note_buttons_init
  .text.dingle_input_init
-                0x00000bee        0x6 main.o
-                0x00000bee                dingle_input_init
+                0x00000ff0        0x6 main.o
+                0x00000ff0                dingle_input_init
  .text.song_out_init
-                0x00000bf4       0x12 main.o
-                0x00000bf4                song_out_init
+                0x00000ff6       0x12 main.o
+                0x00000ff6                song_out_init
  .text.start_up
-                0x00000c06      0x1e4 main.o
-                0x00000c06                start_up
+                0x00001008      0x1fc main.o
+                0x00001008                start_up
  .text.check_start_mode_pin
-                0x00000dea       0x30 main.o
-                0x00000dea                check_start_mode_pin
+                0x00001204       0x30 main.o
+                0x00001204                check_start_mode_pin
  .text.set_startup_mode_lights
-                0x00000e1a       0x28 main.o
-                0x00000e1a                set_startup_mode_lights
+                0x00001234       0x28 main.o
+                0x00001234                set_startup_mode_lights
  .text.get_note_buttons
-                0x00000e42       0x20 main.o
-                0x00000e42                get_note_buttons
+                0x0000125c       0x20 main.o
+                0x0000125c                get_note_buttons
  .text.check_play_note
-                0x00000e62       0x42 main.o
-                0x00000e62                check_play_note
- .text.main     0x00000ea4       0x86 main.o
-                0x00000ea4                main
+                0x0000127c       0x2e main.o
+                0x0000127c                check_play_note
+ .text.main     0x000012aa       0x86 main.o
+                0x000012aa                main
  .text.__vector_12
-                0x00000f2a       0x48 main.o
-                0x00000f2a                __vector_12
+                0x00001330       0x48 main.o
+                0x00001330                __vector_12
  .text.__vector_3
-                0x00000f72       0x48 main.o
-                0x00000f72                __vector_3
+                0x00001378       0x48 main.o
+                0x00001378                __vector_3
  .text.__vector_38
-                0x00000fba       0x2e main.o
-                0x00000fba                __vector_38
+                0x000013c0       0x2e main.o
+                0x000013c0                __vector_38
  .text.note_timer_C5_init
-                0x00000fe8       0x10 note_player.o
-                0x00000fe8                note_timer_C5_init
+                0x000013ee       0x10 note_player.o
+                0x000013ee                note_timer_C5_init
  .text.sys_timer_D5_init
-                0x00000ff8       0x1a note_player.o
-                0x00000ff8                sys_timer_D5_init
+                0x000013fe       0x1a note_player.o
+                0x000013fe                sys_timer_D5_init
  .text.note_decay_init
-                0x00001012       0x42 note_player.o
-                0x00001012                note_decay_init
+                0x00001418       0x42 note_player.o
+                0x00001418                note_decay_init
  .text.run_note_decay
-                0x00001054       0x1c note_player.o
-                0x00001054                run_note_decay
+                0x0000145a       0x1c note_player.o
+                0x0000145a                run_note_decay
  .text.note_play
-                0x00001070       0x2c note_player.o
-                0x00001070                note_play
+                0x00001476       0x32 note_player.o
+                0x00001476                note_play
  .text.reset_play
-                0x0000109c       0x16 note_player.o
-                0x0000109c                reset_play
+                0x000014a8       0x1a note_player.o
+                0x000014a8                reset_play
  .text.note_player_init
-                0x000010b2        0xe note_player.o
-                0x000010b2                note_player_init
+                0x000014c2        0xe note_player.o
+                0x000014c2                note_player_init
  .text.note_interrupt_handler
-                0x000010c0        0x6 note_player.o
-                0x000010c0                note_interrupt_handler
+                0x000014d0        0x6 note_player.o
+                0x000014d0                note_interrupt_handler
+ .text.note_player_playing
+                0x000014d6        0x6 note_player.o
+                0x000014d6                note_player_playing
  .text.beat_timer_C4_init
-                0x000010c6       0x14 song_player.o
-                0x000010c6                beat_timer_C4_init
+                0x000014dc       0x14 song_player.o
+                0x000014dc                beat_timer_C4_init
  .text.note_0_timer_C5_init
-                0x000010da       0x10 song_player.o
-                0x000010da                note_0_timer_C5_init
+                0x000014f0       0x10 song_player.o
+                0x000014f0                note_0_timer_C5_init
  .text.note_1_timer_D5_init
-                0x000010ea       0x10 song_player.o
-                0x000010ea                note_1_timer_D5_init
+                0x00001500       0x10 song_player.o
+                0x00001500                note_1_timer_D5_init
  .text.set_note_and_beat
-                0x000010fa       0xc0 song_player.o
-                0x000010fa                set_note_and_beat
+                0x00001510       0xc0 song_player.o
+                0x00001510                set_note_and_beat
  .text.set_ch0_note_and_beat
-                0x000011ba       0x46 song_player.o
-                0x000011ba                set_ch0_note_and_beat
+                0x000015d0       0x46 song_player.o
+                0x000015d0                set_ch0_note_and_beat
  .text.set_ch1_note_and_beat
-                0x00001200       0x46 song_player.o
-                0x00001200                set_ch1_note_and_beat
+                0x00001616       0x46 song_player.o
+                0x00001616                set_ch1_note_and_beat
  .text.song_init
-                0x00001246      0x10e song_player.o
-                0x00001246                song_init
+                0x0000165c      0x10e song_player.o
+                0x0000165c                song_init
  .text.load_track_into_mem
-                0x00001354       0x62 song_player.o
-                0x00001354                load_track_into_mem
+                0x0000176a       0x62 song_player.o
+                0x0000176a                load_track_into_mem
  .text.song_player_init
-                0x000013b6      0x126 song_player.o
-                0x000013b6                song_player_init
+                0x000017cc      0x126 song_player.o
+                0x000017cc                song_player_init
  .text.song_start
-                0x000014dc        0x8 song_player.o
-                0x000014dc                song_start
+                0x000018f2        0x8 song_player.o
+                0x000018f2                song_start
  .text.song_interrupt_handler
-                0x000014e4      0x146 song_player.o
-                0x000014e4                song_interrupt_handler
+                0x000018fa      0x146 song_player.o
+                0x000018fa                song_interrupt_handler
  .text.get_allow_portal
-                0x0000162a        0x6 start_mode.o
-                0x0000162a                get_allow_portal
+                0x00001a40        0x6 start_mode.o
+                0x00001a40                get_allow_portal
  .text.get_allow_easter_egg
-                0x00001630        0x6 start_mode.o
-                0x00001630                get_allow_easter_egg
+                0x00001a46        0x6 start_mode.o
+                0x00001a46                get_allow_easter_egg
  .text.get_start_mode
-                0x00001636        0x6 start_mode.o
-                0x00001636                get_start_mode
+                0x00001a4c        0x6 start_mode.o
+                0x00001a4c                get_start_mode
  .text.reset_start_mode_in_eeprom
-                0x0000163c        0xc start_mode.o
-                0x0000163c                reset_start_mode_in_eeprom
+                0x00001a52        0xc start_mode.o
+                0x00001a52                reset_start_mode_in_eeprom
  .text.enable_wdt
-                0x00001648        0xc start_mode.o
-                0x00001648                enable_wdt
+                0x00001a5e        0xc start_mode.o
+                0x00001a5e                enable_wdt
  .text.start_mode_init
-                0x00001654       0x3c start_mode.o
-                0x00001654                start_mode_init
+                0x00001a6a       0x3c start_mode.o
+                0x00001a6a                start_mode_init
  .text.next_start_mode
-                0x00001690       0x78 start_mode.o
-                0x00001690                next_start_mode
+                0x00001aa6       0x78 start_mode.o
+                0x00001aa6                next_start_mode
  .text.ws2812drv_init
-                0x00001708       0xa0 ws2812drv.o
-                0x00001708                ws2812drv_init
+                0x00001b1e       0xa0 ws2812drv.o
+                0x00001b1e                ws2812drv_init
  .text.ws2812drv_start_transfer
-                0x000017a8       0x1c ws2812drv.o
-                0x000017a8                ws2812drv_start_transfer
+                0x00001bbe       0x1c ws2812drv.o
+                0x00001bbe                ws2812drv_start_transfer
  .text.libgcc.div
-                0x000017c4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodhi4.o)
-                0x000017c4                _div
-                0x000017c4                __divmodhi4
- .text.libgcc   0x000017ec        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_tablejump2.o)
-                0x000017ec                __tablejump2__
+                0x00001bda       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodhi4.o)
+                0x00001bda                _div
+                0x00001bda                __divmodhi4
+ .text.libgcc   0x00001c02        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_tablejump2.o)
+                0x00001c02                __tablejump2__
  .text.libgcc.div
-                0x000017f8       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodhi4.o)
-                0x000017f8                __udivmodhi4
+                0x00001c0e       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodhi4.o)
+                0x00001c0e                __udivmodhi4
  .text.avr-libc
-                0x00001820      0x242 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
-                0x00001820                malloc
-                0x00001950                free
+                0x00001c36      0x242 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
+                0x00001c36                malloc
+                0x00001d66                free
  .text.avr-libc
-                0x00001a62       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
-                0x00001a62                eeprom_read_byte
-                0x00001a6a                eeprom_mapen
+                0x00001e78       0xb8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o)
+                0x00001f0a                rand_r
+                0x00001f10                rand
+                0x00001f1a                srand
  .text.avr-libc
-                0x00001a72       0x2c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
-                0x00001a72                eeprom_write_byte
-                0x00001a74                eeprom_write_r18
-                0x00001a9e                . = ALIGN (0x2)
+                0x00001f30       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
+                0x00001f30                eeprom_read_byte
+                0x00001f38                eeprom_mapen
+ .text.avr-libc
+                0x00001f40       0x2c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
+                0x00001f40                eeprom_write_byte
+                0x00001f42                eeprom_write_r18
+ .text.libgcc.div
+                0x00001f6c       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_divmodsi4.o)
+                0x00001f6c                __divmodsi4
+ .text.libgcc.div
+                0x00001f9a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_negsi2.o)
+                0x00001f9a                __negsi2
+ .text.libgcc.mul
+                0x00001faa       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_muluhisi3.o)
+                0x00001faa                __muluhisi3
+ .text.libgcc.mul
+                0x00001fc0       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_mulshisi3.o)
+                0x00001fc0                __mulshisi3
+                0x00001fc6                __mulohisi3
+ .text.libgcc.div
+                0x00001fd0       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_udivmodsi4.o)
+                0x00001fd0                __udivmodsi4
+ .text.libgcc.mul
+                0x00002014       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_umulhisi3.o)
+                0x00002014                __umulhisi3
+                0x00002032                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001a9e        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_exit.o)
-                0x00001a9e                _exit
-                0x00001a9e                exit
+ .fini9         0x00002032        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_exit.o)
+                0x00002032                _exit
+                0x00002032                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -671,162 +831,192 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001a9e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_exit.o)
+ .fini0         0x00002032        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega2\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001aa2                _etext = .
+                0x00002036                _etext = .
 
-.data           0x00802000      0x15c load address 0x00001aa2
+.data           0x00802000      0x17a load address 0x00002036
                 0x00802000                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00802000        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
                 0x00802000                __malloc_heap_end
                 0x00802002                __malloc_heap_start
                 0x00802004                __malloc_margin
+ .data          0x00802006        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o)
  *(.data*)
- .data.bump     0x00802006        0x1 light_player.o
+ .data.game_start_notes
+                0x0080200a        0x8 games.o
+                0x0080200a                game_start_notes
+ .data.bump     0x00802012        0x1 light_player.o
  .data.decay_table_len
-                0x00802007        0x1 note_player.o
-                0x00802007                decay_table_len
+                0x00802013        0x1 note_player.o
+                0x00802013                decay_table_len
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.rainbow_leds
-                0x00802008       0x24 light_player.o
+                0x00802014       0x24 light_player.o
  .rodata.pos_leds
-                0x0080202c       0x15 light_player.o
+                0x00802038       0x15 light_player.o
+ .rodata.LED_MAX_ON
+                0x0080204d        0x3 light_player.o
+ .rodata.LED_OFF
+                0x00802050        0x3 light_player.o
+ .rodata.BUTTON_3
+                0x00802053        0x3 light_player.o
+ .rodata.BUTTON_2
+                0x00802056        0x3 light_player.o
+ .rodata.BUTTON_1
+                0x00802059        0x3 light_player.o
+ .rodata.BUTTON_0
+                0x0080205c        0x3 light_player.o
  .rodata.expDecayVals
-                0x00802041       0x1a note_player.o
+                0x0080205f       0x1a note_player.o
  .rodata.noteClocks
-                0x0080205b       0x80 note_player.o
+                0x00802079       0x80 note_player.o
  .rodata.noteClocks
-                0x008020db       0x80 song_player.o
+                0x008020f9       0x80 song_player.o
  *(.gnu.linkonce.r*)
-                0x0080215c                . = ALIGN (0x2)
- *fill*         0x0080215b        0x1 
-                0x0080215c                _edata = .
-                0x0080215c                PROVIDE (__data_end, .)
+                0x0080217a                . = ALIGN (0x2)
+ *fill*         0x00802179        0x1 
+                0x0080217a                _edata = .
+                0x0080217a                PROVIDE (__data_end, .)
 
-.bss            0x0080215c       0xf8
-                0x0080215c                PROVIDE (__bss_start, .)
+.bss            0x0080217a      0x101
+                0x0080217a                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.last_val  0x0080215c        0x2 io_expander.o
-                0x0080215c                last_val
- .bss.offset    0x0080215e        0x1 light_player.o
- .bss.note_played
-                0x0080215f        0x1 main.o
-                0x0080215f                note_played
+ .bss.game_state
+                0x0080217a        0x1 games.o
+                0x0080217a                game_state
+ .bss.timer_counter
+                0x0080217b        0x2 games.o
+                0x0080217b                timer_counter
+ .bss.progress_index
+                0x0080217d        0x1 games.o
+                0x0080217d                progress_index
+ .bss.play_index
+                0x0080217e        0x1 games.o
+                0x0080217e                play_index
+ .bss.last_val  0x0080217f        0x2 io_expander.o
+                0x0080217f                last_val
+ .bss.offset    0x00802181        0x1 light_player.o
  .bss.display_ctr
-                0x00802160        0x2 main.o
-                0x00802160                display_ctr
+                0x00802182        0x2 main.o
+                0x00802182                display_ctr
+ .bss.playing   0x00802184        0x1 note_player.o
+                0x00802184                playing
  .bss.isCh1Intro
-                0x00802162        0x1 song_player.o
-                0x00802162                isCh1Intro
+                0x00802185        0x1 song_player.o
+                0x00802185                isCh1Intro
  .bss.ch1NoteCount
-                0x00802163        0x2 song_player.o
-                0x00802163                ch1NoteCount
+                0x00802186        0x2 song_player.o
+                0x00802186                ch1NoteCount
  .bss.ch1MainNoteCount
-                0x00802165        0x2 song_player.o
-                0x00802165                ch1MainNoteCount
+                0x00802188        0x2 song_player.o
+                0x00802188                ch1MainNoteCount
  .bss.ch1IntroNoteCount
-                0x00802167        0x2 song_player.o
-                0x00802167                ch1IntroNoteCount
+                0x0080218a        0x2 song_player.o
+                0x0080218a                ch1IntroNoteCount
  .bss.noteCh1BeatCount
-                0x00802169        0x1 song_player.o
-                0x00802169                noteCh1BeatCount
+                0x0080218c        0x1 song_player.o
+                0x0080218c                noteCh1BeatCount
  .bss.noteCh1ExtBitPos
-                0x0080216a        0x1 song_player.o
-                0x0080216a                noteCh1ExtBitPos
+                0x0080218d        0x1 song_player.o
+                0x0080218d                noteCh1ExtBitPos
  .bss.noteCh1ExtIndex
-                0x0080216b        0x2 song_player.o
-                0x0080216b                noteCh1ExtIndex
+                0x0080218e        0x2 song_player.o
+                0x0080218e                noteCh1ExtIndex
  .bss.noteCh1Index
-                0x0080216d        0x2 song_player.o
-                0x0080216d                noteCh1Index
+                0x00802190        0x2 song_player.o
+                0x00802190                noteCh1Index
  .bss.hasCh1Main
-                0x0080216f        0x1 song_player.o
-                0x0080216f                hasCh1Main
+                0x00802192        0x1 song_player.o
+                0x00802192                hasCh1Main
  .bss.hasCh1Intro
-                0x00802170        0x1 song_player.o
-                0x00802170                hasCh1Intro
+                0x00802193        0x1 song_player.o
+                0x00802193                hasCh1Intro
  .bss.isCh0Intro
-                0x00802171        0x1 song_player.o
-                0x00802171                isCh0Intro
+                0x00802194        0x1 song_player.o
+                0x00802194                isCh0Intro
  .bss.ch0NoteCount
-                0x00802172        0x2 song_player.o
-                0x00802172                ch0NoteCount
+                0x00802195        0x2 song_player.o
+                0x00802195                ch0NoteCount
  .bss.ch0MainNoteCount
-                0x00802174        0x2 song_player.o
-                0x00802174                ch0MainNoteCount
+                0x00802197        0x2 song_player.o
+                0x00802197                ch0MainNoteCount
  .bss.ch0IntroNoteCount
-                0x00802176        0x2 song_player.o
-                0x00802176                ch0IntroNoteCount
+                0x00802199        0x2 song_player.o
+                0x00802199                ch0IntroNoteCount
  .bss.noteCh0BeatCount
-                0x00802178        0x1 song_player.o
-                0x00802178                noteCh0BeatCount
+                0x0080219b        0x1 song_player.o
+                0x0080219b                noteCh0BeatCount
  .bss.noteCh0ExtBitPos
-                0x00802179        0x1 song_player.o
-                0x00802179                noteCh0ExtBitPos
+                0x0080219c        0x1 song_player.o
+                0x0080219c                noteCh0ExtBitPos
  .bss.noteCh0ExtIndex
-                0x0080217a        0x2 song_player.o
-                0x0080217a                noteCh0ExtIndex
+                0x0080219d        0x2 song_player.o
+                0x0080219d                noteCh0ExtIndex
  .bss.noteCh0Index
-                0x0080217c        0x2 song_player.o
-                0x0080217c                noteCh0Index
+                0x0080219f        0x2 song_player.o
+                0x0080219f                noteCh0Index
  .bss.hasCh0Main
-                0x0080217e        0x1 song_player.o
-                0x0080217e                hasCh0Main
+                0x008021a1        0x1 song_player.o
+                0x008021a1                hasCh0Main
  .bss.hasCh0Intro
-                0x0080217f        0x1 song_player.o
-                0x0080217f                hasCh0Intro
+                0x008021a2        0x1 song_player.o
+                0x008021a2                hasCh0Intro
  .bss.allow_easter_egg
-                0x00802180        0x1 start_mode.o
-                0x00802180                allow_easter_egg
+                0x008021a3        0x1 start_mode.o
+                0x008021a3                allow_easter_egg
  .bss.allow_portal
-                0x00802181        0x1 start_mode.o
-                0x00802181                allow_portal
+                0x008021a4        0x1 start_mode.o
+                0x008021a4                allow_portal
  .bss.start_mode
-                0x00802182        0x1 start_mode.o
-                0x00802182                start_mode
+                0x008021a5        0x1 start_mode.o
+                0x008021a5                start_mode
  *(COMMON)
- COMMON         0x00802183        0xb i2c.o
-                0x00802183                twi_repeat_cmd_sent
-                0x00802184                twi_no_of_bytes
-                0x00802186                twi_repeat_mode
-                0x00802187                twi_data_count
-                0x00802189                twi_transfer_complete
-                0x0080218a                twi_repeat_data
-                0x0080218b                twi_data
-                0x0080218d                twi_repeat_cmd
- COMMON         0x0080218e       0xa8 main.o
-                0x0080218e                leds
- COMMON         0x00802236       0x1a song_player.o
-                0x00802236                ch1IntroExt
-                0x00802238                ch0MainExt
-                0x0080223a                ch0Ext
-                0x0080223c                ch0MainTrack
-                0x0080223e                ch0IntroTrack
-                0x00802240                ch1MainExt
-                0x00802242                update_display_callback_ptr
-                0x00802244                ch0IntroExt
-                0x00802246                ch1MainTrack
-                0x00802248                ch1IntroTrack
-                0x0080224a                ch1Track
-                0x0080224c                ch0Track
-                0x0080224e                ch1Ext
- COMMON         0x00802250        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
-                0x00802250                __brkval
-                0x00802252                __flp
-                0x00802254                PROVIDE (__bss_end, .)
-                0x00001aa2                __data_load_start = LOADADDR (.data)
-                0x00001bfe                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008021a6        0x4 games.o
+                0x008021a6                sequence
+                0x008021a8                step
+ COMMON         0x008021aa        0xb i2c.o
+                0x008021aa                twi_repeat_cmd_sent
+                0x008021ab                twi_no_of_bytes
+                0x008021ad                twi_repeat_mode
+                0x008021ae                twi_data_count
+                0x008021b0                twi_transfer_complete
+                0x008021b1                twi_repeat_data
+                0x008021b2                twi_data
+                0x008021b4                twi_repeat_cmd
+ COMMON         0x008021b5       0xa8 light_player.o
+                0x008021b5                leds
+ COMMON         0x0080225d       0x1a song_player.o
+                0x0080225d                ch1IntroExt
+                0x0080225f                ch0MainExt
+                0x00802261                ch0Ext
+                0x00802263                ch0MainTrack
+                0x00802265                ch0IntroTrack
+                0x00802267                ch1MainExt
+                0x00802269                update_display_callback_ptr
+                0x0080226b                ch0IntroExt
+                0x0080226d                ch1MainTrack
+                0x0080226f                ch1IntroTrack
+                0x00802271                ch1Track
+                0x00802273                ch0Track
+                0x00802275                ch1Ext
+ COMMON         0x00802277        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
+                0x00802277                __brkval
+                0x00802279                __flp
+                0x0080227b                PROVIDE (__bss_end, .)
+                0x00002036                __data_load_start = LOADADDR (.data)
+                0x000021b0                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00802254        0x0
+.noinit         0x0080227b        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00802254                _end = .
-                0x00802254                PROVIDE (__heap_start, .)
+                0x0080227b                _end = .
+                0x0080227b                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -867,8 +1057,9 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 i2c.o
+ .comment       0x00000000       0x30 games.o
                                  0x31 (size before relaxing)
+ .comment       0x00000030       0x31 i2c.o
  .comment       0x00000030       0x31 io_expander.o
  .comment       0x00000030       0x31 light_player.o
  .comment       0x00000030       0x31 main.o
@@ -877,6 +1068,7 @@ END GROUP
  .comment       0x00000030       0x31 start_mode.o
  .comment       0x00000030       0x31 ws2812drv.o
  .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(malloc.o)
+ .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2\libc.a(rand.o)
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x40
@@ -898,115 +1090,124 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x2f8
+.debug_aranges  0x00000000      0x358
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x40 i2c.o
+                0x00000000       0x50 games.o
  .debug_aranges
-                0x00000040       0x40 io_expander.o
+                0x00000050       0x40 i2c.o
  .debug_aranges
-                0x00000080       0x48 light_player.o
+                0x00000090       0x40 io_expander.o
  .debug_aranges
-                0x000000c8       0x98 main.o
+                0x000000d0       0x50 light_player.o
  .debug_aranges
-                0x00000160       0x58 note_player.o
+                0x00000120       0x98 main.o
  .debug_aranges
-                0x000001b8       0x70 song_player.o
+                0x000001b8       0x60 note_player.o
  .debug_aranges
-                0x00000228       0x60 start_mode.o
+                0x00000218       0x70 song_player.o
  .debug_aranges
-                0x00000288       0x30 ws2812drv.o
+                0x00000288       0x60 start_mode.o
  .debug_aranges
-                0x000002b8       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
+                0x000002e8       0x30 ws2812drv.o
  .debug_aranges
-                0x000002d8       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
+                0x00000318       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
+ .debug_aranges
+                0x00000338       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x748e
+.debug_info     0x00000000     0x7caf
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x1bea C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
- .debug_info    0x00001bea      0x2a2 i2c.o
- .debug_info    0x00001e8c      0x28e io_expander.o
- .debug_info    0x0000211a      0x3ce light_player.o
- .debug_info    0x000024e8      0xcff main.o
- .debug_info    0x000031e7     0x1882 note_player.o
- .debug_info    0x00004a69     0x17a2 song_player.o
- .debug_info    0x0000620b      0x298 start_mode.o
- .debug_info    0x000064a3      0xeab ws2812drv.o
- .debug_info    0x0000734e       0xa0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
- .debug_info    0x000073ee       0xa0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
+ .debug_info    0x00001bea      0x75b games.o
+ .debug_info    0x00002345      0x2a2 i2c.o
+ .debug_info    0x000025e7      0x28e io_expander.o
+ .debug_info    0x00002875      0x4de light_player.o
+ .debug_info    0x00002d53      0xc89 main.o
+ .debug_info    0x000039dc     0x18ad note_player.o
+ .debug_info    0x00005289     0x17a2 song_player.o
+ .debug_info    0x00006a2b      0x299 start_mode.o
+ .debug_info    0x00006cc4      0xeab ws2812drv.o
+ .debug_info    0x00007b6f       0xa0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
+ .debug_info    0x00007c0f       0xa0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
 
-.debug_abbrev   0x00000000     0x28a5
+.debug_abbrev   0x00000000     0x2b3c
  *(.debug_abbrev)
  .debug_abbrev  0x00000000     0x1a6e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
- .debug_abbrev  0x00001a6e       0xeb i2c.o
- .debug_abbrev  0x00001b59      0x17e io_expander.o
- .debug_abbrev  0x00001cd7      0x193 light_player.o
- .debug_abbrev  0x00001e6a      0x2e5 main.o
- .debug_abbrev  0x0000214f      0x191 note_player.o
- .debug_abbrev  0x000022e0      0x325 song_player.o
- .debug_abbrev  0x00002605      0x11b start_mode.o
- .debug_abbrev  0x00002720      0x15d ws2812drv.o
- .debug_abbrev  0x0000287d       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
- .debug_abbrev  0x00002891       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
+ .debug_abbrev  0x00001a6e      0x217 games.o
+ .debug_abbrev  0x00001c85       0xeb i2c.o
+ .debug_abbrev  0x00001d70      0x17e io_expander.o
+ .debug_abbrev  0x00001eee      0x1de light_player.o
+ .debug_abbrev  0x000020cc      0x2e7 main.o
+ .debug_abbrev  0x000023b3      0x1a9 note_player.o
+ .debug_abbrev  0x0000255c      0x325 song_player.o
+ .debug_abbrev  0x00002881      0x136 start_mode.o
+ .debug_abbrev  0x000029b7      0x15d ws2812drv.o
+ .debug_abbrev  0x00002b14       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
+ .debug_abbrev  0x00002b28       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
 
-.debug_line     0x00000000     0x1e5c
+.debug_line     0x00000000     0x2298
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x199 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
- .debug_line    0x00000199      0x2b6 i2c.o
- .debug_line    0x0000044f      0x16f io_expander.o
- .debug_line    0x000005be      0x3ec light_player.o
- .debug_line    0x000009aa      0x61c main.o
- .debug_line    0x00000fc6      0x252 note_player.o
- .debug_line    0x00001218      0x625 song_player.o
- .debug_line    0x0000183d      0x2dc start_mode.o
- .debug_line    0x00001b19      0x1fd ws2812drv.o
- .debug_line    0x00001d16       0x79 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
- .debug_line    0x00001d8f       0xcd C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
+ .debug_line    0x00000199      0x341 games.o
+ .debug_line    0x000004da      0x2b6 i2c.o
+ .debug_line    0x00000790      0x16f io_expander.o
+ .debug_line    0x000008ff      0x4b3 light_player.o
+ .debug_line    0x00000db2      0x62c main.o
+ .debug_line    0x000013de      0x276 note_player.o
+ .debug_line    0x00001654      0x625 song_player.o
+ .debug_line    0x00001c79      0x2dc start_mode.o
+ .debug_line    0x00001f55      0x1fd ws2812drv.o
+ .debug_line    0x00002152       0x79 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eerd_byte.o)
+ .debug_line    0x000021cb       0xcd C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2\libatxmega16e5.a(eewr_byte.o)
 
-.debug_frame    0x00000000      0x6c4
+.debug_frame    0x00000000      0x7cc
  *(.debug_frame)
- .debug_frame   0x00000000       0x98 i2c.o
- .debug_frame   0x00000098       0x8c io_expander.o
- .debug_frame   0x00000124       0xe8 light_player.o
- .debug_frame   0x0000020c      0x1d4 main.o
- .debug_frame   0x000003e0       0xa0 note_player.o
- .debug_frame   0x00000480      0x15c song_player.o
- .debug_frame   0x000005dc       0xa4 start_mode.o
- .debug_frame   0x00000680       0x44 ws2812drv.o
+ .debug_frame   0x00000000       0xac games.o
+ .debug_frame   0x000000ac       0x98 i2c.o
+ .debug_frame   0x00000144       0x8c io_expander.o
+ .debug_frame   0x000001d0      0x134 light_player.o
+ .debug_frame   0x00000304      0x1d4 main.o
+ .debug_frame   0x000004d8       0xb0 note_player.o
+ .debug_frame   0x00000588      0x15c song_player.o
+ .debug_frame   0x000006e4       0xa4 start_mode.o
+ .debug_frame   0x00000788       0x44 ws2812drv.o
 
-.debug_str      0x00000000     0x3dd3
+.debug_str      0x00000000     0x3fe7
  *(.debug_str)
  .debug_str     0x00000000     0x1277 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
- .debug_str     0x00001277      0x31a i2c.o
+ .debug_str     0x00001277      0x3cf games.o
+                                0x447 (size before relaxing)
+ .debug_str     0x00001646      0x1d9 i2c.o
                                 0x359 (size before relaxing)
- .debug_str     0x00001591       0x8c io_expander.o
-                                0x222 (size before relaxing)
- .debug_str     0x0000161d      0x109 light_player.o
-                                0x29d (size before relaxing)
- .debug_str     0x00001726      0x658 main.o
-                                0x875 (size before relaxing)
- .debug_str     0x00001d7e     0x1317 note_player.o
-                               0x1674 (size before relaxing)
- .debug_str     0x00003095      0x315 song_player.o
+ .debug_str     0x0000181f       0x8a io_expander.o
+                                0x234 (size before relaxing)
+ .debug_str     0x000018a9      0x13e light_player.o
+                                0x2e3 (size before relaxing)
+ .debug_str     0x000019e7      0x5eb main.o
+                                0x889 (size before relaxing)
+ .debug_str     0x00001fd2     0x12e8 note_player.o
+                               0x1690 (size before relaxing)
+ .debug_str     0x000032ba      0x30e song_player.o
                                 0xb8e (size before relaxing)
- .debug_str     0x000033aa       0x6c start_mode.o
+ .debug_str     0x000035c8       0x6c start_mode.o
                                 0x292 (size before relaxing)
- .debug_str     0x00003416      0x9bd ws2812drv.o
+ .debug_str     0x00003634      0x9b3 ws2812drv.o
                                0x1966 (size before relaxing)
 
-.debug_loc      0x00000000     0x10a1
+.debug_loc      0x00000000     0x1301
  *(.debug_loc)
- .debug_loc     0x00000000       0xfa i2c.o
- .debug_loc     0x000000fa      0x160 io_expander.o
- .debug_loc     0x0000025a      0x43a light_player.o
- .debug_loc     0x00000694      0x3f5 main.o
- .debug_loc     0x00000a89       0x50 note_player.o
- .debug_loc     0x00000ad9      0x510 song_player.o
- .debug_loc     0x00000fe9       0x60 start_mode.o
- .debug_loc     0x00001049       0x58 ws2812drv.o
+ .debug_loc     0x00000000      0x112 games.o
+ .debug_loc     0x00000112       0xfa i2c.o
+ .debug_loc     0x0000020c      0x160 io_expander.o
+ .debug_loc     0x0000036c      0x575 light_player.o
+ .debug_loc     0x000008e1      0x408 main.o
+ .debug_loc     0x00000ce9       0x50 note_player.o
+ .debug_loc     0x00000d39      0x510 song_player.o
+ .debug_loc     0x00001249       0x60 start_mode.o
+ .debug_loc     0x000012a9       0x58 ws2812drv.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1026,16 +1227,17 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x238
+.debug_ranges   0x00000000      0x288
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x30 i2c.o
- .debug_ranges  0x00000030       0x30 io_expander.o
- .debug_ranges  0x00000060       0x38 light_player.o
- .debug_ranges  0x00000098       0x88 main.o
- .debug_ranges  0x00000120       0x48 note_player.o
- .debug_ranges  0x00000168       0x60 song_player.o
- .debug_ranges  0x000001c8       0x50 start_mode.o
- .debug_ranges  0x00000218       0x20 ws2812drv.o
+ .debug_ranges  0x00000000       0x40 games.o
+ .debug_ranges  0x00000040       0x30 i2c.o
+ .debug_ranges  0x00000070       0x30 io_expander.o
+ .debug_ranges  0x000000a0       0x40 light_player.o
+ .debug_ranges  0x000000e0       0x88 main.o
+ .debug_ranges  0x00000168       0x50 note_player.o
+ .debug_ranges  0x000001b8       0x60 song_player.o
+ .debug_ranges  0x00000218       0x50 start_mode.o
+ .debug_ranges  0x00000268       0x20 ws2812drv.o
 
 .debug_macro
  *(.debug_macro)

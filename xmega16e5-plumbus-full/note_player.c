@@ -10,6 +10,8 @@
 #include "sound_data.h"
 
 uint8_t decay_table_len = sizeof(expDecayVals);
+uint8_t playing = 0;
+
 
 void note_timer_C5_init()
 {
@@ -72,6 +74,7 @@ void run_note_decay()
 
 void note_play(uint8_t note_index)
 {
+	playing = 1;
 	TCC5.CCA = noteClocks[STARTING_NOTE_INDEX + note_index];
 	run_note_decay();
 	TCC5.CTRLA = TC_CLKSEL_DIV8_gc;// TC_CLKSEL_DIV1024_gc;
@@ -79,7 +82,7 @@ void note_play(uint8_t note_index)
 
 void reset_play()
 {
-
+	playing = 0;
 	EDMA.CH0.CTRLB |= EDMA_CH_TRNIF_bm;   // clear INT flag    // EDMA.INTFLAGS = EDMA_CH0TRNFIF_bm;    // alternate flag location also works
 	TCC5.CNT = 0;
 	TCC5.CTRLA = 0;// TC_CLKSEL_DIV1024_gc;
@@ -95,4 +98,9 @@ void note_player_init()
 void note_interrupt_handler()
 {
 	reset_play();
+}
+
+uint8_t note_player_playing()
+{
+	return playing;
 }

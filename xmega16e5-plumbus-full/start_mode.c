@@ -109,4 +109,6 @@ void next_start_mode()
 	eeprom_write_byte((uint8_t *)1, start_mode);
 	enable_wdt();
 	
+	while(1);
+	
 }

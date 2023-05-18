@@ -15,5 +15,6 @@
 void note_player_init();
 void note_play(uint8_t note_index);
 void note_interrupt_handler();
+uint8_t note_player_playing();
 
 #endif /* NOTE_PLAYER_H_ */

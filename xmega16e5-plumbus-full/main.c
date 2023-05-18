@@ -18,29 +18,26 @@
 #include "light_player.h"
 #include "sound_data.h"
 #include "io_expander.h"
-
+#include "games.h"
 
 
 volatile uint16_t display_ctr = 0;
-volatile uint8_t note_played = 0;
 
-/***********LED test code start*************/
 
-volatile ws2812drv_led_t leds[LED_COUNT];
 
-/***********LED test code end*************/
+
 
 void update_display_song_play_cb()
 {
 	if (get_start_mode() == NYAN_sm)
 	{
-		play_lights_nyan(leds);
+		play_lights_nyan();
 	}
 	else
 	{
-		play_lights_portal(leds);	
+		play_lights_portal();	
 	}
-	ws2812drv_start_transfer(leds, LED_COUNT);
+	
 }
 
 void clk_init()
@@ -126,15 +123,19 @@ void start_up(uint8_t mode)
 			
 			break;
 		case GAME_EASY_sm:
+			//TCC5 out
+			PORTC.DIRSET = PIN4_bm;
 			note_buttons_init();
 			note_player_init();
 			dingle_input_init();
+			games_init(easy);
 			
 			break;
 		case GAME_HARD_sm:
 			note_buttons_init();
 			note_player_init();
 			dingle_input_init();
+			games_init(hard);
 			
 			break;
 		case NYAN_sm:
@@ -164,9 +165,8 @@ void start_up(uint8_t mode)
 			
 			
 			break;
-		case PORTAL_sm:
-		//TODO: remove test case
-			if (get_allow_portal() || 1)
+		case PORTAL_sm:		
+			if (get_allow_portal())
 			{
 				song_out_init();
 				SongInitParams params;
@@ -233,19 +233,14 @@ uint8_t get_note_buttons()
 uint8_t check_play_note()
 {
 	uint8_t note_buttons = get_note_buttons();
-	uint8_t val_changed = get_val_changed();
-	
-	if (note_buttons && val_changed && !(note_played))
+	uint8_t val_changed = expander_get_val_changed();
+	uint8_t playing = note_player_playing();
+	if (note_buttons && val_changed && !(playing))
 	{
-		PORTA.OUTTGL = PIN3_bm;
-		note_played = 1;
 		note_play(note_buttons);		
 	}
 	
-	if (!(val_changed))
-	{
-		note_played = 0;
-	}
+
 	
 	return note_buttons;
 }
@@ -257,8 +252,7 @@ int main(void)
 	//Debug pin
 	PORTA.DIRSET = PIN3_bm;
 	PORTA.OUTCLR = PIN3_bm;
-	
-		
+			
 	cli();
 	clk_init();
 	interrupt_init();
@@ -266,7 +260,6 @@ int main(void)
 		
 	io_init();
 	expander_init();
-
 	
 	//Hold until the pin is released.
 	while (!(PORTA.IN & PIN0_bm));
@@ -284,20 +277,29 @@ int main(void)
     {
 		//TEMP: move to interrupt handler
 		check_start_mode_pin();
-		
-		if (get_start_mode() == FREEPLAY_sm)
-		{
-			note_buttons = check_play_note();
-			
-			//TEMP: Testing display stuff
-			if (display_ctr >= 10)
+		if (display_ctr >= 10)
+		{		PORTA.OUTTGL = PIN3_bm;
+			switch (get_start_mode())
 			{
-				//Use the LED array, the last value from the dingle pos, and the note buttons
-				play_lights_free_play(leds, get_last_value(), note_buttons);
-				ws2812drv_start_transfer(leds, LED_COUNT);
-				display_ctr = 0;
+				case FREEPLAY_sm:
+					note_buttons = check_play_note();
+					//Use the LED array, the last value from the dingle pos, and the note buttons
+ 					play_lights_free_play(expander_get_last_value(), note_buttons);
+
 				
-			}			
+					break;
+				case GAME_EASY_sm:
+					games_step();
+	
+
+					 
+					break;
+				case GAME_HARD_sm:
+					break;
+				case EASER_EGG_sm:
+					break;
+			}
+			display_ctr = 0;
 		}
 
     }

@@ -148,6 +148,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="games.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="games.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="i2c.c">
       <SubType>compile</SubType>
     </Compile>
