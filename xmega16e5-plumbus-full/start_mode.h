@@ -22,7 +22,8 @@
 #define GAME_HARD_sm 3
 #define NYAN_sm	4
 #define PORTAL_sm 5
-#define EASER_EGG_sm 6
+#define EASTER_EGG_sm 6
+#define EASTER_EGG_START_sm 0xef
 
 
 
@@ -34,5 +35,6 @@ void set_allow_portal(uint8_t allow);
 uint8_t get_allow_easter_egg();
 void set_allow_easter_egg(uint8_t allow);
 void next_start_mode();
+void set_start_mode(uint8_t start_mode);
 
 #endif /* START_MODE_H_ */

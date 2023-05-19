@@ -24,8 +24,9 @@
 volatile uint16_t display_ctr = 0;
 
 
-
-
+uint8_t easter_egg_pattern[] = {15, 11, 9, 15, 11, 9};
+uint8_t easter_egg_index = 0;
+uint8_t easter_egg_size = sizeof(easter_egg_pattern);
 
 void update_display_song_play_cb()
 {
@@ -110,9 +111,12 @@ void song_out_init()
 
 void start_up(uint8_t mode)
 {
+	SongInitParams params;
+	
 	switch(mode)
 	{
 		case STANDBY_sm:
+			ws2812drv_init();
 			break;
 		case FREEPLAY_sm:
 			//TCC5 out
@@ -120,6 +124,7 @@ void start_up(uint8_t mode)
 			note_buttons_init();
 			note_player_init();
 			dingle_input_init();
+			ws2812drv_init();
 			
 			break;
 		case GAME_EASY_sm:
@@ -129,19 +134,23 @@ void start_up(uint8_t mode)
 			note_player_init();
 			dingle_input_init();
 			games_init(easy);
+			ws2812drv_init();
 			
 			break;
 		case GAME_HARD_sm:
+			//TCC5 out
+			PORTC.DIRSET = PIN4_bm;		
 			note_buttons_init();
 			note_player_init();
 			dingle_input_init();
 			games_init(hard);
+			ws2812drv_init();
 			
 			break;
 		case NYAN_sm:
 			
 			song_out_init();
-			SongInitParams params;
+			ws2812drv_init();
 			params.bmp_period = nyanBPMPeriod;
 			params.ch0.intro.track_data = nyanIntroTreble;
 			params.ch0.intro.track_size = sizeof(nyanIntroTreble);
@@ -160,7 +169,7 @@ void start_up(uint8_t mode)
 			params.ch1.main.extension_data = nyanMainExtBass;
 			params.ch1.main.extension_size = sizeof(nyanMainExtBass);
 			
-			song_player_init(params, update_display_song_play_cb);
+			song_player_init(params, play_lights_nyan);
 			song_start();
 			
 			
@@ -169,7 +178,7 @@ void start_up(uint8_t mode)
 			if (get_allow_portal())
 			{
 				song_out_init();
-				SongInitParams params;
+				ws2812drv_init();
 				params.bmp_period = portalBPMPeriod;
 				params.ch0.intro.track_data = portalIntroTreble;
 				params.ch0.intro.track_size = sizeof(portalIntroTreble);
@@ -188,17 +197,44 @@ void start_up(uint8_t mode)
 				params.ch1.main.extension_data = portalMainExtBass;
 				params.ch1.main.extension_size = sizeof(portalMainExtBass);
 			
-				song_player_init(params, update_display_song_play_cb);
+				song_player_init(params, play_lights_portal);
 				song_start();
 						
 			}
 			break;
-		case EASER_EGG_sm:
+		case EASTER_EGG_sm:
 			if (get_allow_easter_egg())
 			{
+				ws2812drv_init();
 				note_buttons_init();
 			}
-			break;			
+			break;
+		case EASTER_EGG_START_sm:
+			
+			song_out_init();
+			ws2812drv_init();
+			params.bmp_period = easterEggBPMPeriod;
+			params.ch0.intro.track_data = easterEggIntroTreble;
+			params.ch0.intro.track_size = sizeof(easterEggIntroTreble);
+			params.ch0.intro.extension_data = easterEggIntroExtTreble;
+			params.ch0.intro.extension_size = sizeof(easterEggIntroExtTreble);
+			params.ch0.main.track_data = easterEggMainTreble;
+			params.ch0.main.track_size = sizeof(easterEggMainTreble);
+			params.ch0.main.extension_data = easterEggMainExtTreble;
+			params.ch0.main.extension_size = sizeof(easterEggMainExtTreble);
+			params.ch1.intro.track_data = easterEggIntroBass;
+			params.ch1.intro.track_size = sizeof(easterEggIntroBass);
+			params.ch1.intro.extension_data = easterEggIntroExtBass;
+			params.ch1.intro.extension_size = sizeof(easterEggIntroExtBass);
+			params.ch1.main.track_data = easterEggMainBass;
+			params.ch1.main.track_size = sizeof(easterEggMainBass);
+			params.ch1.main.extension_data = easterEggMainExtBass;
+			params.ch1.main.extension_size = sizeof(easterEggMainExtBass);
+				
+			song_player_init(params, play_lights_easter_egg_intro);
+			//song_start();
+			song_play_once(next_start_mode);
+			break;		
 	}	
 }
 
@@ -238,11 +274,39 @@ uint8_t check_play_note()
 	if (note_buttons && val_changed && !(playing))
 	{
 		note_play(note_buttons);		
+		
+		if (note_buttons == easter_egg_pattern[easter_egg_index])
+		{
+			easter_egg_index++;
+			
+			if (easter_egg_index == easter_egg_size)
+			{
+				
+				set_allow_easter_egg(ALLOW_VAL);
+				easter_egg_index = 0;
+				set_start_mode(EASTER_EGG_START_sm);
+			}			
+		}
+		else
+		{
+			easter_egg_index = 0;
+		}
 	}
-	
 
-	
 	return note_buttons;
+}
+
+uint8_t check_play_easter_egg()
+{
+	uint8_t note_buttons = get_note_buttons();
+
+	if (note_buttons && expander_get_val_changed() && !(note_player_playing()))
+	{
+
+	}
+
+	return note_buttons;	
+	
 }
 
 int main(void)
@@ -269,8 +333,8 @@ int main(void)
 	start_up(get_start_mode());	
 	reset_start_mode_in_eeprom();
 	
-	//Needs to come last. Still not sure why
-	ws2812drv_init();
+
+
 
     /* Replace with your application code */
     while (1) 
@@ -281,22 +345,22 @@ int main(void)
 		{		PORTA.OUTTGL = PIN3_bm;
 			switch (get_start_mode())
 			{
+				case STANDBY_sm:
+					play_lights_standby();
 				case FREEPLAY_sm:
 					note_buttons = check_play_note();
 					//Use the LED array, the last value from the dingle pos, and the note buttons
  					play_lights_free_play(expander_get_last_value(), note_buttons);
 
-				
 					break;
-				case GAME_EASY_sm:
-					games_step();
-	
-
-					 
-					break;
+				case GAME_EASY_sm:					
 				case GAME_HARD_sm:
+					games_step(get_note_buttons());
 					break;
-				case EASER_EGG_sm:
+				case EASTER_EGG_sm:
+					note_buttons = check_play_note();
+					//Use the LED array, the last value from the dingle pos, and the note buttons
+					play_lights_easter_egg(expander_get_last_value(), note_buttons);	
 					break;
 			}
 			display_ctr = 0;

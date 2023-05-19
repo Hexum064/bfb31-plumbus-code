@@ -20,13 +20,14 @@ void play_lights_overlay_note_button_leds(uint8_t buttons);
 
 void play_lights_standby();
 void play_lights_free_play(uint16_t dingle_pos, uint8_t buttons);
+void play_lights_easter_egg(uint16_t dingle_pos, uint8_t buttons);
+void play_lights_easter_egg_intro();
 void play_lights_nyan();
 void play_lights_portal();
 
 void play_lights_game(uint16_t dingle_pos, uint8_t buttons);
-void play_lights_good_play();
 void play_lights_game_over();
 void play_lights_won_easy_game();
-void play_lights_won_hard_game();
+// void play_lights_won_hard_game();
 
 #endif /* LIGHT_PLAYER_H_ */

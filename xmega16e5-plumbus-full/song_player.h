@@ -34,6 +34,7 @@ typedef struct songInitParams
 
 void song_player_init(SongInitParams initParams, void (*update_display_cb)());
 void song_start();
+void song_play_once(void (*callback)());
 void song_interrupt_handler();
 
 #endif /* SONG_PLAYER_H_ */

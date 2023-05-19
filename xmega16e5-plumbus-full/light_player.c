@@ -13,20 +13,40 @@
 
 volatile ws2812drv_led_t leds[LED_COUNT];
 
-static const ws2812drv_led_t BUTTON_0 = {.r = MAX_BRIGHTNESS, .g = 0, .b = 0};
-static const ws2812drv_led_t BUTTON_1 = {.r = 0, .g = MAX_BRIGHTNESS, .b = 0};
-static const ws2812drv_led_t BUTTON_2 = {.r = 0, .g = 0, .b = MAX_BRIGHTNESS};
-static const ws2812drv_led_t BUTTON_3 = {.r = MAX_BRIGHTNESS / 2, .g = MAX_BRIGHTNESS / 2, .b = 0};
-static const ws2812drv_led_t LED_OFF = {.r = 0, .g = 0, .b = 0};
-static const ws2812drv_led_t LED_MAX_ON =
-{
-	.r = MAX_BRIGHTNESS / 4,
-	.g = MAX_BRIGHTNESS / 4,
-	.b = MAX_BRIGHTNESS / 4
-};
+#define BUTTON_0 0
+#define BUTTON_1 1
+#define BUTTON_2 2
+#define BUTTON_3 3
+#define LED_OFF 4
+#define LED_MAX_ON 5
+
+// static const ws2812drv_led_t BUTTON_0 = {.r = MAX_BRIGHTNESS, .g = 0, .b = 0};
+// static const ws2812drv_led_t BUTTON_1 = {.r = 0, .g = MAX_BRIGHTNESS, .b = 0};
+// static const ws2812drv_led_t BUTTON_2 = {.r = 0, .g = 0, .b = MAX_BRIGHTNESS};
+// static const ws2812drv_led_t BUTTON_3 = {.r = MAX_BRIGHTNESS / 2, .g = MAX_BRIGHTNESS / 2, .b = 0};
+// static const ws2812drv_led_t LED_OFF = {.r = 0, .g = 0, .b = 0};
+// static const ws2812drv_led_t LED_MAX_ON =
+// {
+// 	.r = MAX_BRIGHTNESS / 4,
+// 	.g = MAX_BRIGHTNESS / 4,
+// 	.b = MAX_BRIGHTNESS / 4
+// };
 
 static uint8_t offset = 0;
 static int8_t bump = -1;
+
+const ws2812drv_led_t game_colors[] = {
+	(ws2812drv_led_t){.r = MAX_BRIGHTNESS, .g = 0, .b = 0},
+	(ws2812drv_led_t){.r = 0, .g = MAX_BRIGHTNESS, .b = 0},
+	(ws2812drv_led_t){.r = 0, .g = 0, .b = MAX_BRIGHTNESS},
+	(ws2812drv_led_t){.r = MAX_BRIGHTNESS / 2, .g = MAX_BRIGHTNESS / 2, .b = 0},
+	(ws2812drv_led_t){.r = 0, .g = 0, .b = 0},
+	(ws2812drv_led_t){
+			.r = MAX_BRIGHTNESS / 4,
+			.g = MAX_BRIGHTNESS / 4,
+			.b = MAX_BRIGHTNESS / 4
+		}
+};
 
 static const ws2812drv_led_t pos_leds[POS_LED_COUNT] = {
 	{.r = 0, .g = 0, .b = 0},
@@ -127,46 +147,46 @@ void play_lights_overlay_note_button_leds(uint8_t buttons)
 {
 	if (buttons & 0x01)
 	{
-		leds[GRUMBO_LED_COUNT] = BUTTON_0;
-		leds[GRUMBO_LED_COUNT + 1] = BUTTON_0;
+		leds[GRUMBO_LED_COUNT] = game_colors[BUTTON_0];
+		leds[GRUMBO_LED_COUNT + 1] = game_colors[BUTTON_0];
 	}
 	else
 	{
-		leds[GRUMBO_LED_COUNT] = LED_OFF;
-		leds[GRUMBO_LED_COUNT + 1] = LED_OFF;
+		leds[GRUMBO_LED_COUNT] = game_colors[LED_OFF];
+		leds[GRUMBO_LED_COUNT + 1] = game_colors[LED_OFF];
 	}
 	
 	if (buttons & 0x02)
 	{
-		leds[GRUMBO_LED_COUNT + 2] = BUTTON_1;
-		leds[GRUMBO_LED_COUNT + 3] = BUTTON_1;
+		leds[GRUMBO_LED_COUNT + 2] = game_colors[BUTTON_1];
+		leds[GRUMBO_LED_COUNT + 3] = game_colors[BUTTON_1];
 	}
 	else
 	{
-		leds[GRUMBO_LED_COUNT + 2] = LED_OFF;
-		leds[GRUMBO_LED_COUNT + 3] = LED_OFF;
+		leds[GRUMBO_LED_COUNT + 2] = game_colors[LED_OFF];
+		leds[GRUMBO_LED_COUNT + 3] = game_colors[LED_OFF];
 	}
 	
 	if (buttons & 0x04)
 	{
-		leds[GRUMBO_LED_COUNT + 4] = BUTTON_2;
-		leds[GRUMBO_LED_COUNT + 5] = BUTTON_2;
+		leds[GRUMBO_LED_COUNT + 4] = game_colors[BUTTON_2];
+		leds[GRUMBO_LED_COUNT + 5] = game_colors[BUTTON_2];
 	}
 	else
 	{
-		leds[GRUMBO_LED_COUNT + 4] = LED_OFF;
-		leds[GRUMBO_LED_COUNT + 5] = LED_OFF;
+		leds[GRUMBO_LED_COUNT + 4] = game_colors[LED_OFF];
+		leds[GRUMBO_LED_COUNT + 5] = game_colors[LED_OFF];
 	}
 	
 	if (buttons & 0x08)
 	{
-		leds[GRUMBO_LED_COUNT + 6] = BUTTON_3;
-		leds[GRUMBO_LED_COUNT + 7] = BUTTON_3;
+		leds[GRUMBO_LED_COUNT + 6] = game_colors[BUTTON_3];
+		leds[GRUMBO_LED_COUNT + 7] = game_colors[BUTTON_3];
 	}
 	else
 	{
-		leds[GRUMBO_LED_COUNT + 6] = LED_OFF;
-		leds[GRUMBO_LED_COUNT + 7] = LED_OFF;
+		leds[GRUMBO_LED_COUNT + 6] = game_colors[LED_OFF];
+		leds[GRUMBO_LED_COUNT + 7] = game_colors[LED_OFF];
 	}
 }
 	
@@ -273,8 +293,8 @@ void play_lights_nyan()
 		if (i < margin || i >= half - margin)
 		{
 			
-			leds[i + bump] = (ws2812drv_led_t)LED_OFF;
-			leds[i + half - bump] = (ws2812drv_led_t)LED_OFF;
+			leds[i + bump] = (ws2812drv_led_t)game_colors[LED_OFF];
+			leds[i + half - bump] = (ws2812drv_led_t)game_colors[LED_OFF];
 		}
 		else
 		{
@@ -291,8 +311,8 @@ void play_lights_nyan()
 				
 	}
 	
-	leds[margin + bump] = (ws2812drv_led_t)LED_MAX_ON;
-	leds[(half - margin - 1) + bump] = (ws2812drv_led_t)LED_MAX_ON;
+	leds[margin + bump] = (ws2812drv_led_t)game_colors[LED_MAX_ON];
+	leds[(half - margin - 1) + bump] = (ws2812drv_led_t)game_colors[LED_MAX_ON];
 	
 	
 	
@@ -305,7 +325,7 @@ void play_lights_nyan()
 		}
 		else
 		{
-			leds[i] = (ws2812drv_led_t)LED_MAX_ON;
+			leds[i] = (ws2812drv_led_t)game_colors[LED_MAX_ON];
 		}
 	}
 	
@@ -361,24 +381,104 @@ void play_lights_game(uint16_t dingle_pos, uint8_t buttons)
 	uint8_t i = 0;
 	uint8_t quarter = GRUMBO_LED_COUNT / 4;
 	uint8_t divisor = 32;
-	for (; i < quarter; i++)
+	uint8_t b_i;
+	for (; i < GRUMBO_LED_COUNT; i++)
 	{
-		leds[i] = (ws2812drv_led_t){BUTTON_0.r / divisor, BUTTON_0.g / divisor, BUTTON_0.b / divisor};
-	}
-	for (; i < quarter * 2; i++)
-	{
-		leds[i] = (ws2812drv_led_t){BUTTON_1.r / divisor, BUTTON_1.g / divisor, BUTTON_1.b / divisor};
-	}
-	for (; i < quarter * 3; i++)
-	{
-		leds[i] = (ws2812drv_led_t){BUTTON_2.r / divisor, BUTTON_2.g / divisor, BUTTON_2.b / divisor};
-	}
-	for (; i < quarter * 4; i++)
-	{
-		leds[i] = (ws2812drv_led_t){BUTTON_3.r / divisor, BUTTON_3.g / divisor, BUTTON_3.b / divisor};
-	}		
+		b_i = i/quarter;
+		leds[i] = (ws2812drv_led_t){game_colors[b_i].r / divisor, game_colors[b_i].g / divisor, game_colors[b_i].b / divisor};
+	}	
 	
 	overlay_dingle_pos(dingle_pos);	
 	play_lights_overlay_note_button_leds(buttons);
+	ws2812drv_start_transfer(leds, LED_COUNT);
+}
+
+void play_lights_game_over()
+{
+	uint8_t i = 0;
+	ws2812drv_led_t color;
+	
+	if (!(offset++ % 4))
+	{
+		color = (ws2812drv_led_t){.r=MAX_BRIGHTNESS, .g=0, .b=0};
+	}
+	else
+	{
+		color = (ws2812drv_led_t)game_colors[LED_OFF];
+	}
+	
+	for (i = 0; i < LED_COUNT; i++)
+	{
+		leds[i] = color;
+	}
+	ws2812drv_start_transfer(leds, LED_COUNT);
+}
+
+void play_lights_won_easy_game()
+{
+	
+	uint8_t i = 0;
+	uint8_t quarter = GRUMBO_LED_COUNT / 4;
+	uint8_t b_i;
+	for (; i < GRUMBO_LED_COUNT; i++)
+	{
+		b_i = i/quarter;
+		b_i += offset;
+		b_i %= 4;
+			
+		leds[i] = game_colors[b_i];
+	}
+	
+	offset++;
+	
+	leds[GRUMBO_LED_COUNT] = game_colors[BUTTON_0];
+	leds[GRUMBO_LED_COUNT + 1] = game_colors[BUTTON_0];
+
+	leds[GRUMBO_LED_COUNT + 2] = game_colors[BUTTON_1];
+	leds[GRUMBO_LED_COUNT + 3] = game_colors[BUTTON_1];
+
+	leds[GRUMBO_LED_COUNT + 4] = game_colors[BUTTON_2];
+	leds[GRUMBO_LED_COUNT + 5] = game_colors[BUTTON_2];
+
+	leds[GRUMBO_LED_COUNT + 6] = game_colors[BUTTON_3];
+	leds[GRUMBO_LED_COUNT + 7] = game_colors[BUTTON_3];
+
+
+	ws2812drv_start_transfer(leds, LED_COUNT);
+}
+
+void play_lights_easter_egg(uint16_t dingle_pos, uint8_t buttons)
+{
+	
+}
+
+void play_lights_easter_egg_intro()
+{
+	uint8_t i = 0;
+	
+	for (;i<GRUMBO_LED_COUNT; i++)
+	{
+		leds[i] = (ws2812drv_led_t){.r = 0, .g = MAX_BRIGHTNESS, .b = 0};
+		
+	}
+
+	for (;i < LED_COUNT; i++)
+	{
+		if (i%2)
+		{
+			leds[i] = (ws2812drv_led_t){.r = MAX_BRIGHTNESS, .g = 0, .b = MAX_BRIGHTNESS};
+		}
+		else
+		{
+			leds[i] = (ws2812drv_led_t){.r = MAX_BRIGHTNESS, .g = MAX_BRIGHTNESS, .b = MAX_BRIGHTNESS};
+		}
+	}
+
+	offset += 3;
+
+	leds[offset % GRUMBO_LED_COUNT] =(ws2812drv_led_t){.r = MAX_BRIGHTNESS, .g = MAX_BRIGHTNESS, .b = 0};
+	leds[(offset + 1) % GRUMBO_LED_COUNT] =(ws2812drv_led_t){.r = MAX_BRIGHTNESS, .g = MAX_BRIGHTNESS, .b = 0};
+	leds[(offset + 2) % GRUMBO_LED_COUNT] =(ws2812drv_led_t){.r = MAX_BRIGHTNESS, .g = MAX_BRIGHTNESS, .b = 0};	
+		
 	ws2812drv_start_transfer(leds, LED_COUNT);
 }

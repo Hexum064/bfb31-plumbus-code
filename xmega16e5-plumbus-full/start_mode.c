@@ -54,7 +54,7 @@ void start_mode_init()
 	
 	start_mode = eeprom_read_byte((uint8_t*)1);
 	
-	if (start_mode > BASE_MAX_MODE + 2)
+	if (start_mode > BASE_MAX_MODE + 2 && start_mode != EASTER_EGG_START_sm)
 	{
 		start_mode = 0;
 		reset_start_mode_in_eeprom();
@@ -69,10 +69,8 @@ void start_mode_init()
 	
 }
 
-void next_start_mode()
+void set_start_mode(uint8_t start_mode)
 {
-	start_mode++;
-
 	//If start mode is set to what "Allow Portal" would be, we need to see
 	//if the mode can be set to "Allow Portal", or if it can be skipped and
 	//go straight to "Easter Egg" mode, or we just roll back to "Standby"
@@ -81,7 +79,7 @@ void next_start_mode()
 		//This falls through if allow_porta is true, and allows the mode to
 		//be switched to Portal mode
 		
-		if ((allow_portal != ALLOW_VAL) && (allow_easter_egg != ALLOW_VAL))	
+		if ((allow_portal != ALLOW_VAL) && (allow_easter_egg != ALLOW_VAL))
 		{
 			start_mode = 0;
 		}
@@ -91,7 +89,7 @@ void next_start_mode()
 		}
 	}
 	else if (start_mode == BASE_MAX_MODE + 2)
-	{				
+	{
 		//Just let this fall through if allow_easter_egg is true
 		//so we can switch to easter egg mode
 		if ((allow_easter_egg != ALLOW_VAL))
@@ -99,16 +97,24 @@ void next_start_mode()
 			start_mode = 0;
 		}
 		
-	}	
-	else if (start_mode > BASE_MAX_MODE + 2)
+	}
+	else if (start_mode > BASE_MAX_MODE + 2 && start_mode != EASTER_EGG_START_sm)
 	{
 		//Our default restart state
-		start_mode = 0;		
+		start_mode = 0;
 	}
 	
 	eeprom_write_byte((uint8_t *)1, start_mode);
+	eeprom_busy_wait();
 	enable_wdt();
 	
 	while(1);
+	
+}
+
+void next_start_mode()
+{
+	start_mode++;
+	set_start_mode(start_mode);
 	
 }

@@ -39,6 +39,20 @@ static const uint8_t portalMainExtBass[] PROGMEM = {0x0,0x0,0x0,0x0,0x0,0x0,0x0,
 
 static const uint16_t portalBPMPeriod = 15625; //120 BPM
 
+static const uint8_t easterEggIntroTreble[] PROGMEM = {0x80};
+static const uint8_t easterEggIntroExtTreble[] PROGMEM = {0x00};
+
+static const uint8_t easterEggMainTreble[] PROGMEM = {0x5c,0x58,0x96,0x5c,0x58,0x96,0x5c,0x58,0x56,0x51,0x93,0x56,0x55,0x56,0x5a,0xdd,0x40,0x5f,0x5d,0x5a,0x7d};
+static const uint8_t easterEggMainExtTreble[] PROGMEM = {0x0,0x0,0x00};
+
+static const uint8_t easterEggIntroBass[] PROGMEM = {0x80};
+static const uint8_t easterEggIntroExtBass[] PROGMEM = {0x00};
+
+static const uint8_t easterEggMainBass[] PROGMEM = {0x68,0x61,0x61,0x61,0x68,0x61,0x61,0x61,0x68,0x61,0x61,0x61,0x68,0x61,0x61,0x61,0x6d,0x66,0x66,0x66,0x6d,0x66,0x66,0x66,0x6d,0x66,0x66,0x66,0x6d,0x66,0x66,0x2d};
+static const uint8_t easterEggMainExtBass[] PROGMEM = {0x0,0x0,0x0,0x80};
+
+static const uint16_t easterEggBPMPeriod = 15625; //120 BPM
+
 //Left out of PROGMEM for ease of use and because it is used my 5 modes
 static const uint16_t noteClocks[] = {1204,1276,1352,1432,1516,1608,1704,1804,1912,2024,2144,2272,2408,2552,2704,2864,3032,3216,3404,3608,3824,4048,4292,4544,4816,5104,5404,5728,6068,6428,6812,7216,7644,8100,8580,9092,9632,10204,10812,11456,12136,12856,13620,14432,15288,16200,17160,18180,19264,20408,21620,22908,24268,25712,27240,28860,30576,32392,34324,36364,38528,40816,43244,45820};
 static const uint16_t expDecayVals[] = {4095, 4000, 3800, 3500, 3100, 2600, 2000, 1300, 500, 400, 300, 200, 100};

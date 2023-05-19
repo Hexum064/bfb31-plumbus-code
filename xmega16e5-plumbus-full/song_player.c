@@ -51,6 +51,7 @@ uint8_t * ch1Ext;
 uint8_t isCh1Intro = 0;
 
 void (*update_display_callback_ptr)();
+void (*play_once_callback_ptr)() = 0;
 
 void beat_timer_C4_init(uint16_t per)
 {
@@ -260,6 +261,12 @@ void song_start()
 	TCC4.CTRLA = TC_CLKSEL_DIV256_gc;
 }
 
+void song_play_once(void (*callback)())
+{
+	play_once_callback_ptr = callback;
+	song_start();	
+}
+
 void song_interrupt_handler(){
 // 	PORTA.OUTSET = PIN2_bm;
 	TCC4.INTFLAGS = TC4_OVFIF_bm;
@@ -280,6 +287,12 @@ void song_interrupt_handler(){
 				ch0NoteCount = ch0MainNoteCount;
 				ch0Track = ch0MainTrack;
 				ch0Ext = ch0MainExt;
+			}
+			else if (play_once_callback_ptr)
+			{
+				TCC4.CTRLA = 0;
+				play_once_callback_ptr();
+				
 			}
 			
 			noteCh0BeatCount = 0;
