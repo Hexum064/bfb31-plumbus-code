@@ -20,11 +20,13 @@
 #include "io_expander.h"
 #include "games.h"
 
+#define MEESEEKS_ADDR 0x12
+#define MEESEEKS_PLAY_CMD 0x01
 
 volatile uint16_t display_ctr = 0;
 
-
-uint8_t easter_egg_pattern[] = {15, 11, 9, 15, 11, 9};
+uint8_t meeseeks_data[] = {MEESEEKS_PLAY_CMD, 0};
+uint8_t easter_egg_pattern[] = {15,11,9,15,11,9,15,11,9,4,6,9,8,9,13,15};
 uint8_t easter_egg_index = 0;
 uint8_t easter_egg_size = sizeof(easter_egg_pattern);
 
@@ -116,6 +118,7 @@ void start_up(uint8_t mode)
 	switch(mode)
 	{
 		case STANDBY_sm:
+			sys_timer_D5_init();
 			ws2812drv_init();
 			break;
 		case FREEPLAY_sm:
@@ -205,8 +208,10 @@ void start_up(uint8_t mode)
 		case EASTER_EGG_sm:
 			if (get_allow_easter_egg())
 			{
+				sys_timer_D5_init();
 				ws2812drv_init();
 				note_buttons_init();
+				dingle_input_init();
 			}
 			break;
 		case EASTER_EGG_START_sm:
@@ -300,9 +305,10 @@ uint8_t check_play_easter_egg()
 {
 	uint8_t note_buttons = get_note_buttons();
 
-	if (note_buttons && expander_get_val_changed() && !(note_player_playing()))
+	if (note_buttons && expander_get_val_changed())
 	{
-
+		meeseeks_data[1] = note_buttons;
+		twi_write(MEESEEKS_ADDR, meeseeks_data, sizeof(meeseeks_data));
 	}
 
 	return note_buttons;	
@@ -342,11 +348,13 @@ int main(void)
 		//TEMP: move to interrupt handler
 		check_start_mode_pin();
 		if (display_ctr >= 10)
-		{		PORTA.OUTTGL = PIN3_bm;
+		{		
+			PORTA.OUTTGL = PIN3_bm;
 			switch (get_start_mode())
 			{
 				case STANDBY_sm:
 					play_lights_standby();
+					break;
 				case FREEPLAY_sm:
 					note_buttons = check_play_note();
 					//Use the LED array, the last value from the dingle pos, and the note buttons
@@ -358,9 +366,9 @@ int main(void)
 					games_step(get_note_buttons());
 					break;
 				case EASTER_EGG_sm:
-					note_buttons = check_play_note();
+					note_buttons = check_play_easter_egg();
 					//Use the LED array, the last value from the dingle pos, and the note buttons
-					play_lights_easter_egg(expander_get_last_value(), note_buttons);	
+					play_lights_easter_egg(expander_read_ports(), note_buttons);	
 					break;
 			}
 			display_ctr = 0;

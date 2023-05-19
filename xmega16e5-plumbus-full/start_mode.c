@@ -63,9 +63,12 @@ void start_mode_init()
 	allow_portal = eeprom_read_byte((uint8_t*)2);
 	
 	//TODO:Remove test case
-	allow_portal = ALLOW_VAL;
+// 	allow_portal = ALLOW_VAL;
 	
 	allow_easter_egg = eeprom_read_byte((uint8_t*)3);
+	
+	//TODO:Remove test case
+// 	allow_easter_egg = ALLOW_VAL;
 	
 }
 
