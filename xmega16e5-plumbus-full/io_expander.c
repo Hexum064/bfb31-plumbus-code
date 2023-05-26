@@ -59,6 +59,11 @@ uint8_t expander_get_val_changed()
 {
 	uint16_t val = expander_read_ports();
 	
+	if (val == 0xFFFF)
+	{
+		return 0;
+	}
+	
 	if (val == last_val)
 	{
 		return 0;

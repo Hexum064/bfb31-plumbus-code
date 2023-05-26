@@ -6,6 +6,7 @@
  */ 
 
 #include "light_player.h"
+#include "rand_seed.h"
 
 #define POS_LED_COUNT 7
 #define HALF_POS_LED_COUNT 3
@@ -143,6 +144,8 @@ static const ws2812drv_led_t rainbow_leds[RAINBOW_LED_COUNT] = {
 	}
 };
 
+
+
 void play_lights_overlay_note_button_leds(uint8_t buttons)
 {
 	if (buttons & 0x01)
@@ -222,25 +225,25 @@ void overlay_dingle_pos(uint16_t dingle_pos)
 	}
 }
 
-uint8_t red = MAX_BRIGHTNESS/16;
-uint8_t green = MAX_BRIGHTNESS/16;
-uint8_t blue = MAX_BRIGHTNESS/16;
+uint8_t red = 2;
+uint8_t green = 2;
+uint8_t blue = 2;
 
 void play_lights_standby()
 {
 	ws2812drv_led_t color = {.r = red, .g = green, .b = blue};
 	blue++;
-	if (blue >= MAX_BRIGHTNESS / 4)
+	if (blue >= MAX_BRIGHTNESS / 8)
 	{
-		blue = MAX_BRIGHTNESS/16;
+		blue = 2;
 		red++;
-		if (red >= MAX_BRIGHTNESS / 4)
+		if (red >= MAX_BRIGHTNESS / 8)
 		{
-			red = MAX_BRIGHTNESS/16;
+			red = 2;
 			green++;
-			if (green >= MAX_BRIGHTNESS / 4)
+			if (green >= MAX_BRIGHTNESS / 8)
 			{
-				green = MAX_BRIGHTNESS/16;
+				green = 2;
 				
 			}
 			
@@ -284,6 +287,10 @@ void play_lights_nyan()
 	uint8_t half = GRUMBO_LED_COUNT / 2;
 	uint8_t margin = ((half - RAINBOW_LED_COUNT) / 2);
 	
+	if (offset == 0)
+	{
+		srand(get_seed);
+	}
 	
 	if (!(offset % 2))
 	{
@@ -329,7 +336,7 @@ void play_lights_nyan()
 	for (i = GRUMBO_LED_COUNT; i < LED_COUNT; i++)
 	{
 
-		if (offset % 23)
+		if ((rand() % 23))
 		{
 			leds[i] = (ws2812drv_led_t){ .r=0, .g=0, .b = MAX_BRIGHTNESS};
 		}

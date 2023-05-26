@@ -43,6 +43,7 @@ C_SRCS +=  \
 ../light_player.c \
 ../main.c \
 ../note_player.c \
+../rand_seed.c \
 ../song_player.c \
 ../start_mode.c \
 ../ws2812drv.c
@@ -61,6 +62,7 @@ io_expander.o \
 light_player.o \
 main.o \
 note_player.o \
+rand_seed.o \
 song_player.o \
 start_mode.o \
 ws2812drv.o
@@ -72,6 +74,7 @@ io_expander.o \
 light_player.o \
 main.o \
 note_player.o \
+rand_seed.o \
 song_player.o \
 start_mode.o \
 ws2812drv.o
@@ -83,6 +86,7 @@ io_expander.d \
 light_player.d \
 main.d \
 note_player.d \
+rand_seed.d \
 song_player.d \
 start_mode.d \
 ws2812drv.d
@@ -94,6 +98,7 @@ io_expander.d \
 light_player.d \
 main.d \
 note_player.d \
+rand_seed.d \
 song_player.d \
 start_mode.d \
 ws2812drv.d
@@ -148,6 +153,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./note_player.o: .././note_player.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega16e5 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\gcc\dev\atxmega16e5" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./rand_seed.o: .././rand_seed.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega16e5 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\gcc\dev\atxmega16e5" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

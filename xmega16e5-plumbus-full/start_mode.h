@@ -27,7 +27,7 @@
 
 
 
-void start_mode_init();
+void start_mode_init(uint8_t unlock);
 uint8_t get_start_mode();
 void reset_start_mode_in_eeprom();
 uint8_t get_allow_portal();

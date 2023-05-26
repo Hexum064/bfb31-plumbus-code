@@ -49,7 +49,7 @@ void enable_wdt()
 	WDT_CTRL = WDT_ENABLE_bm | WDT_CEN_bm;
 }
 
-void start_mode_init()
+void start_mode_init(uint8_t unlock)
 {
 	
 	start_mode = eeprom_read_byte((uint8_t*)1);
@@ -62,13 +62,18 @@ void start_mode_init()
 	
 	allow_portal = eeprom_read_byte((uint8_t*)2);
 	
-	//TODO:Remove test case
-// 	allow_portal = ALLOW_VAL;
+	if (allow_portal != ALLOW_VAL && unlock)
+	{
+ 		allow_portal = ALLOW_VAL & unlock;
+	}
 	
 	allow_easter_egg = eeprom_read_byte((uint8_t*)3);
+
+	if (allow_easter_egg != ALLOW_VAL && unlock)
+	{
+		allow_easter_egg = ALLOW_VAL & unlock;	
+	}
 	
-	//TODO:Remove test case
-// 	allow_easter_egg = ALLOW_VAL;
 	
 }
 

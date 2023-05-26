@@ -315,6 +315,48 @@ uint8_t check_play_easter_egg()
 	
 }
 
+uint8_t get_unlock_detected()
+{
+	PORTC.DIRSET = PIN5_bm;
+	PORTC.DIRCLR = PIN6_bm;
+	PORTC.PIN6CTRL = PORT_OPC_PULLDOWN_gc;
+	_delay_ms(1);
+	//PIN6 should be low
+	if (PORTC.IN & PIN6_bm)
+	{
+		return 0;
+	}
+	_delay_ms(1);
+	PORTC.OUTSET = PIN5_bm;
+	_delay_ms(1);
+	//PIN6 should be high
+	if (!(PORTC.IN & PIN6_bm))
+	{
+		return 0;
+	}	
+	_delay_ms(1);
+	PORTC.OUTCLR = PIN5_bm;
+	_delay_ms(1);
+	
+	//PIN6 should be low
+	if (PORTC.IN & PIN6_bm)
+	{
+		return 0;
+	}
+	_delay_ms(1);
+	PORTC.OUTSET = PIN5_bm;
+	_delay_ms(1);
+	//PIN6 should be high
+	if (!(PORTC.IN & PIN6_bm))
+	{
+		return 0;
+	}
+	
+	PORTC.OUTCLR = PIN5_bm;
+	PORTC.DIRCLR = PIN5_bm;
+	return ALLOW_VAL;	
+}
+
 int main(void)
 {
 	uint8_t note_buttons;
@@ -334,7 +376,10 @@ int main(void)
 	//Hold until the pin is released.
 	while (!(PORTA.IN & PIN0_bm));
 
-	start_mode_init();
+	
+
+
+	start_mode_init(get_unlock_detected());
 	set_startup_mode_lights(get_start_mode());
 	start_up(get_start_mode());	
 	reset_start_mode_in_eeprom();

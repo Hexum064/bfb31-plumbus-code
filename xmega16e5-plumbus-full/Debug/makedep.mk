@@ -14,6 +14,8 @@ main.c
 
 note_player.c
 
+rand_seed.c
+
 song_player.c
 
 start_mode.c
