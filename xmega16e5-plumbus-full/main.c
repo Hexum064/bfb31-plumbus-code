@@ -268,7 +268,11 @@ void set_startup_mode_lights(uint8_t mode)
 
 uint8_t get_note_buttons()
 {
-	return ((~PORTA.IN) & 0xF0) >> 4;
+	uint8_t buttons = ((~PORTA.IN) & 0xF0) >> 4;
+	//need to flip the order
+	uint8_t flipped = ((buttons & 0x01) << 3) | ((buttons & 0x02) << 1) | ((buttons & 0x04) >> 1) | ((buttons & 0x08) >> 3);
+	return flipped;
+	
 }
 
 uint8_t check_play_note()

@@ -9,11 +9,13 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include <avr/eeprom.h>
 
 #define I2C_ADDR 0x12
 #define PLAY_SOUND_CMD 0x01
 
 #define MAX_FILE_SIZE 65530
+#define EEPROM_INIT 0xA1 //just a random number. was thinking of steak at the time
 
 #define ERASE_CMD  0xD8
 #define WEL_CMD  0x06
@@ -30,7 +32,9 @@
 #define RECORD_HOLD_TIME 1000 //1000 ms
 #define RECORD_RESET_TIME 3000 //3000 ms
 #define BLINK_TIME 100 //100 ms
+#define RESET_PER 5000 //5000 ms
 
+volatile uint16_t address_offset_flags = 0;
 volatile uint8_t i2c_data = 0;
 volatile uint8_t current_slot = 0;
 volatile uint8_t recording_slot = 255; //Need this to roll over to 0 the first time
@@ -273,10 +277,22 @@ void play_sound(uint8_t slot)
 // 	{		
 // 		return;
 // 	}
+
+
+	
+	uint8_t offset = 0;
+	//increase slot to +16 if specified slot's address offset flag is set so the "user" section of memory can be read if it has been set
+
+	
 	spi_init();
+	if (address_offset_flags & (1 << slot))
+	{
+		slot += 16;
+	}
 	current_slot = slot;
+	
 	sound_playing = 1;
-	sound_len = read_slot_size(slot);
+	sound_len = read_slot_size(current_slot);
 	if (sound_len == 0xffff)
 	{
 		sound_playing = 0;
@@ -333,7 +349,8 @@ void start_next_page(uint16_t blockAddr)
 	
 	CS_En();
 	spi_write(PROG_CMD);
-	spi_write(recording_slot); //addr hi
+	//We only record to the "user" area of memory, so add 16
+	spi_write(recording_slot + 16); //addr hi
 	spi_write(0xFF & (blockAddr >> 8)); //addr med
 	spi_write(0xFF & blockAddr); //addr lo 
 	//leave CS enabled for now
@@ -366,7 +383,8 @@ void write_recording_len(uint16_t len)
 	
 	CS_En();
 	spi_write(PROG_CMD);
-	spi_write(recording_slot); //addr hi
+	//bump recording_slot to +16 this is because we can assume that if we are recording, we will do so in the "user" section of memory
+	spi_write(recording_slot + 16); //addr hi
 	spi_write(0); //addr med
 	spi_write(0); //addr lo
 	spi_write(0xFF & len);
@@ -375,10 +393,13 @@ void write_recording_len(uint16_t len)
 }
 
 void start_recording()
-{			
+{	
+	//bump recording_slot to +16 and set address offset flag for the slot			
+	address_offset_flags |= (1 << recording_slot);
+	update_offset_flags();
 	leds_set(0);
 	spi_init();
-	erase_slot(recording_slot);	
+	erase_slot(recording_slot + 16);	
 	first_page = 1;
 	block_addr_to_write = 2;
 	current_buffer = buffer0;
@@ -413,6 +434,34 @@ void stop_recording()
 	rec_button_unreleased = 0;
 }
 
+void eeprom_init()
+{
+	if (eeprom_read_byte((uint8_t *)1) != EEPROM_INIT)
+	{		
+		eeprom_write_word((uint16_t *)3, 0x0000);
+		eeprom_write_byte((uint8_t *)1, EEPROM_INIT);
+	}
+}
+
+void update_offset_flags()
+{
+	eeprom_write_word((uint16_t *)3, address_offset_flags);
+}
+
+void get_offset_flags()
+{
+	address_offset_flags = eeprom_read_word((uint16_t *)3);
+}
+
+void play_reset_flash()
+{
+	for (uint8_t i = 0; i < 6; i++)
+	{
+		PORTC.OUTTGL = PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
+		_delay_ms(100);
+	}
+}
+
 int main(void)
 {
 	cli();
@@ -422,11 +471,36 @@ int main(void)
 	dac_init();
 	adc_init();
 	sys_timer_init();
+	
 	sei();
 	
+	eeprom_init();
 	i2c_init();
 	leds_init();
 	record_button_init();
+
+	//Test for reset here
+	rec_button_down = 1;
+	debounce_count = 0;
+	while(debounce_count < RESET_PER)
+	{
+		if (PORTB.IN & PIN3_bm)
+		{
+			debounce_count = 0;
+			break;
+		}
+	}
+	
+	//Reset if conditions met
+	if (debounce_count >= RESET_PER)
+	{
+		address_offset_flags = 0;
+		update_offset_flags();
+		play_reset_flash();
+	}
+	
+	rec_button_down = 0;
+	debounce_count = 0;
 	
 	//Debug out
 	PORTA.DIRSET = PIN7_bm;
@@ -577,6 +651,10 @@ ISR(TCA0_OVF_vect)
 
 		uint16_t addr = sound_index + 2;
 		uint8_t addrHi = current_slot;
+		if (address_offset_flags & (1 << current_slot))
+		{
+			addrHi += 16;
+		}
 		uint8_t addrMid = ((addr >> 8) & 0xFF);
 		uint8_t addrLo = (addr & 0xFF); //Need to start at +2
 		uint8_t sound_byte = get_sound_byte(addrHi, addrMid, addrLo);
