@@ -1240,28 +1240,28 @@ END GROUP
  .debug_frame   0x000007a0       0xbc start_mode.o
  .debug_frame   0x0000085c       0x44 ws2812drv.o
 
-.debug_str      0x00000000     0x4206
+.debug_str      0x00000000     0x4268
  *(.debug_str)
  .debug_str     0x00000000     0x1277 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAE_DFP/1.3.114/gcc/dev/atxmega16e5/avrxmega2/crtatxmega16e5.o
- .debug_str     0x00001277      0x373 games.o
-                                0x3eb (size before relaxing)
- .debug_str     0x000015ea      0x1d9 i2c.o
+ .debug_str     0x00001277      0x391 games.o
+                                0x409 (size before relaxing)
+ .debug_str     0x00001608      0x21d i2c.o
                                 0x359 (size before relaxing)
- .debug_str     0x000017c3       0x71 io_expander.o
+ .debug_str     0x00001825       0x71 io_expander.o
                                 0x234 (size before relaxing)
- .debug_str     0x00001834      0x158 light_player.o
-                                0x338 (size before relaxing)
- .debug_str     0x0000198c      0x788 main.o
-                                0xa4e (size before relaxing)
- .debug_str     0x00002114     0x1305 note_player.o
-                               0x174b (size before relaxing)
- .debug_str     0x00003419       0xbf rand_seed.o
-                                0x2cc (size before relaxing)
- .debug_str     0x000034d8      0x32e song_player.o
-                                0xc78 (size before relaxing)
- .debug_str     0x00003806       0x4d start_mode.o
+ .debug_str     0x00001896      0x158 light_player.o
+                                0x356 (size before relaxing)
+ .debug_str     0x000019ee      0x788 main.o
+                                0xa6c (size before relaxing)
+ .debug_str     0x00002176     0x1305 note_player.o
+                               0x1769 (size before relaxing)
+ .debug_str     0x0000347b       0xbf rand_seed.o
+                                0x2ea (size before relaxing)
+ .debug_str     0x0000353a      0x32e song_player.o
+                                0xc96 (size before relaxing)
+ .debug_str     0x00003868       0x4d start_mode.o
                                 0x2b1 (size before relaxing)
- .debug_str     0x00003853      0x9b3 ws2812drv.o
+ .debug_str     0x000038b5      0x9b3 ws2812drv.o
                                0x1966 (size before relaxing)
 
 .debug_loc      0x00000000     0x186e

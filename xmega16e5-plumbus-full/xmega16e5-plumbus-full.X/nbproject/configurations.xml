@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="65">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>../games.h</itemPath>
+      <itemPath>../i2c.h</itemPath>
+      <itemPath>../io_expander.h</itemPath>
+      <itemPath>../light_player.h</itemPath>
+      <itemPath>../note_player.h</itemPath>
+      <itemPath>../rand_seed.h</itemPath>
+      <itemPath>../song_player.h</itemPath>
+      <itemPath>../sound_data.h</itemPath>
+      <itemPath>../start_mode.h</itemPath>
+      <itemPath>../ws2812drv.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>../games.c</itemPath>
+      <itemPath>../i2c.c</itemPath>
+      <itemPath>../io_expander.c</itemPath>
+      <itemPath>../light_player.c</itemPath>
+      <itemPath>../main.c</itemPath>
+      <itemPath>../note_player.c</itemPath>
+      <itemPath>../rand_seed.c</itemPath>
+      <itemPath>../song_player.c</itemPath>
+      <itemPath>../start_mode.c</itemPath>
+      <itemPath>../ws2812drv.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>ATxmega16E5</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>pk4hybrid</platformTool>
+        <languageToolchain>AVR</languageToolchain>
+        <languageToolchainVersion>4.9.2</languageToolchainVersion>
+        <platform>3</platform>
+      </toolsSet>
+      <packs>
+        <pack name="XMEGAE_DFP" vendor="Microchip" version="2.2.47"/>
+      </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+        <subordinates>
+        </subordinates>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <AVR-AR>
+        <property key="archiver-flags" value="-r"/>
+      </AVR-AR>
+      <AVR-AS>
+        <property key="announce-version" value="false"/>
+        <property key="include-paths" value=""/>
+        <property key="suppress-warnings" value="false"/>
+      </AVR-AS>
+      <AVR-AS-PRE>
+        <property key="announce-version" value="false"/>
+        <property key="include-paths" value=""/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros-undefined" value=""/>
+        <property key="suppress-warnings" value="false"/>
+      </AVR-AS-PRE>
+      <AVR-CPP>
+        <property key="additional-warnings" value="false"/>
+        <property key="call-prologues" value="false"/>
+        <property key="default-bitfield-type" value="false"/>
+        <property key="default-char-type" value="false"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="garbage-collect-data" value="true"/>
+        <property key="garbage-collect-functions" value="true"/>
+        <property key="inhibit-all" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="no-interrupts" value="false"/>
+        <property key="no-system-directories" value="false"/>
+        <property key="optimization-level" value="-O0"/>
+        <property key="pack-struct" value="false"/>
+        <property key="preprocess-only" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros-undefined" value=""/>
+        <property key="save-temps" value="false"/>
+        <property key="short-calls" value="false"/>
+        <property key="short-enums" value="false"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="strict-ansi-errors" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="syntax-only" value="false"/>
+        <property key="undefined-identifier" value="false"/>
+        <property key="verbose" value="false"/>
+      </AVR-CPP>
+      <AVR-GCC>
+        <property key="additional-warnings" value="true"/>
+        <property key="call-prologues" value="false"/>
+        <property key="default-bitfield-type" value="true"/>
+        <property key="default-char-type" value="true"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="extra-warnings" value="false"/>
+        <property key="garbage-collect-data" value="true"/>
+        <property key="garbage-collect-functions" value="true"/>
+        <property key="inhibit-all" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="no-interrupts" value="false"/>
+        <property key="no-system-directories" value="false"/>
+        <property key="optimization-level" value="-Os"/>
+        <property key="pack-struct" value="true"/>
+        <property key="preprocessor-macros" value="NDEBUG"/>
+        <property key="preprocessor-macros-undefined" value=""/>
+        <property key="save-temps" value="false"/>
+        <property key="short-calls" value="false"/>
+        <property key="short-enums" value="true"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="strict-ansi-errors" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="syntax-only" value="false"/>
+        <property key="undefined-identifier" value="false"/>
+        <property key="verbose" value="false"/>
+      </AVR-GCC>
+      <AVR-Global>
+        <property key="common-include-directories" value=""/>
+        <property key="eep" value="true"/>
+        <property key="external-ram-check" value="false"/>
+        <property key="hex" value="true"/>
+        <property key="lss" value="true"/>
+        <property key="omit-pack-options" value="true"/>
+        <property key="relax-branches" value="false"/>
+        <property key="srec" value="true"/>
+        <property key="user-pack-device-support"
+                  value="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\gcc\dev\atxmega16e5"/>
+        <property key="user-pack-include"
+                  value="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\include"/>
+        <property key="usersig" value="false"/>
+      </AVR-Global>
+      <AVR-LD>
+        <property key="eeprom-segment" value=""/>
+        <property key="exclude-standard-libraries" value="false"/>
+        <property key="extra-lib-directories" value=""/>
+        <property key="flash-segment" value=""/>
+        <property key="generate-map-file" value="true"/>
+        <property key="initial-stack-address" value=""/>
+        <property key="input-libraries" value="libm;libm"/>
+        <property key="no-default-libs" value="false"/>
+        <property key="no-shared-libraries" value="false"/>
+        <property key="no-startup-files" value="false"/>
+        <property key="omit-symbol-information" value="false"/>
+        <property key="other-options" value=""/>
+        <property key="remove-unused-sections" value="true"/>
+        <property key="rodata-writable" value="false"/>
+        <property key="sram-segment" value=""/>
+        <property key="v-printf" value="false"/>
+      </AVR-LD>
+    </conf>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>ATxmega16E5</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool></platformTool>
+        <languageToolchain>AVR</languageToolchain>
+        <languageToolchainVersion>4.9.2</languageToolchainVersion>
+        <platform>3</platform>
+      </toolsSet>
+      <packs>
+        <pack name="XMEGAE_DFP" vendor="Microchip" version="2.2.47"/>
+      </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+        <subordinates>
+        </subordinates>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <AVR-AR>
+        <property key="archiver-flags" value="-r"/>
+      </AVR-AR>
+      <AVR-AS>
+        <property key="announce-version" value="false"/>
+        <property key="include-paths" value=""/>
+        <property key="suppress-warnings" value="false"/>
+      </AVR-AS>
+      <AVR-AS-PRE>
+        <property key="announce-version" value="false"/>
+        <property key="include-paths" value=""/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros-undefined" value=""/>
+        <property key="suppress-warnings" value="false"/>
+      </AVR-AS-PRE>
+      <AVR-CPP>
+        <property key="additional-warnings" value="false"/>
+        <property key="call-prologues" value="false"/>
+        <property key="default-bitfield-type" value="false"/>
+        <property key="default-char-type" value="false"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="garbage-collect-data" value="true"/>
+        <property key="garbage-collect-functions" value="true"/>
+        <property key="inhibit-all" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="no-interrupts" value="false"/>
+        <property key="no-system-directories" value="false"/>
+        <property key="optimization-level" value="-O0"/>
+        <property key="pack-struct" value="false"/>
+        <property key="preprocess-only" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros-undefined" value=""/>
+        <property key="save-temps" value="false"/>
+        <property key="short-calls" value="false"/>
+        <property key="short-enums" value="false"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="strict-ansi-errors" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="syntax-only" value="false"/>
+        <property key="undefined-identifier" value="false"/>
+        <property key="verbose" value="false"/>
+      </AVR-CPP>
+      <AVR-GCC>
+        <property key="additional-warnings" value="true"/>
+        <property key="call-prologues" value="false"/>
+        <property key="default-bitfield-type" value="true"/>
+        <property key="default-char-type" value="true"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="extra-warnings" value="false"/>
+        <property key="garbage-collect-data" value="true"/>
+        <property key="garbage-collect-functions" value="true"/>
+        <property key="inhibit-all" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="no-interrupts" value="false"/>
+        <property key="no-system-directories" value="false"/>
+        <property key="optimization-level" value="-O0"/>
+        <property key="pack-struct" value="true"/>
+        <property key="preprocessor-macros" value="DEBUG"/>
+        <property key="preprocessor-macros-undefined" value=""/>
+        <property key="save-temps" value="false"/>
+        <property key="short-calls" value="false"/>
+        <property key="short-enums" value="true"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="strict-ansi-errors" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="syntax-only" value="false"/>
+        <property key="undefined-identifier" value="false"/>
+        <property key="verbose" value="false"/>
+        <appendMe value="-g2"/>
+      </AVR-GCC>
+      <AVR-Global>
+        <property key="common-include-directories" value=""/>
+        <property key="eep" value="true"/>
+        <property key="external-ram-check" value="false"/>
+        <property key="hex" value="true"/>
+        <property key="lss" value="true"/>
+        <property key="omit-pack-options" value="true"/>
+        <property key="relax-branches" value="false"/>
+        <property key="srec" value="true"/>
+        <property key="user-pack-device-support"
+                  value="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\gcc\dev\atxmega16e5"/>
+        <property key="user-pack-include"
+                  value="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAE_DFP\1.3.114\include"/>
+        <property key="usersig" value="false"/>
+      </AVR-Global>
+      <AVR-LD>
+        <property key="eeprom-segment" value=""/>
+        <property key="exclude-standard-libraries" value="false"/>
+        <property key="extra-lib-directories" value=""/>
+        <property key="flash-segment" value=""/>
+        <property key="generate-map-file" value="true"/>
+        <property key="initial-stack-address" value=""/>
+        <property key="input-libraries" value="libm;libm"/>
+        <property key="no-default-libs" value="false"/>
+        <property key="no-shared-libraries" value="false"/>
+        <property key="no-startup-files" value="false"/>
+        <property key="omit-symbol-information" value="false"/>
+        <property key="other-options" value=""/>
+        <property key="remove-unused-sections" value="true"/>
+        <property key="rodata-writable" value="false"/>
+        <property key="sram-segment" value=""/>
+        <property key="v-printf" value="false"/>
+      </AVR-LD>
+    </conf>
+  </confs>
+</configurationDescriptor>

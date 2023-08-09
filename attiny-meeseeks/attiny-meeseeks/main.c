@@ -161,6 +161,11 @@ void leds_init()
 	PORTC.DIRSET = PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
 }
 
+void mem_init()
+{
+	
+}
+
 void leds_set(uint8_t val)
 {
 	if (val & 0x8)
@@ -462,6 +467,8 @@ void play_reset_flash()
 	}
 }
 
+
+
 int main(void)
 {
 	cli();
@@ -474,6 +481,7 @@ int main(void)
 	
 	sei();
 	
+	mem_init();
 	eeprom_init();
 	i2c_init();
 	leds_init();

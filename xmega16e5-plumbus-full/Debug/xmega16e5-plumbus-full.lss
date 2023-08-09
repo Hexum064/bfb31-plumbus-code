@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  000008a0  00000000  00000000  00010de8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00004206  00000000  00000000  00011688  2**0
+ 10 .debug_str    00004268  00000000  00000000  00011688  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000186e  00000000  00000000  0001588e  2**0
+ 11 .debug_loc    0000186e  00000000  00000000  000158f0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000002d0  00000000  00000000  000170fc  2**0
+ 12 .debug_ranges 000002d0  00000000  00000000  0001715e  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -3937,7 +3937,6 @@ uint8_t get_note_buttons()
     19ae:	86 2b       	or	r24, r22
     19b0:	84 2b       	or	r24, r20
 	return flipped;
-	
 }
     19b2:	82 2b       	or	r24, r18
     19b4:	08 95       	ret
@@ -6131,8 +6130,8 @@ void ws2812drv_start_transfer(ws2812drv_led_t *p, uint16_t cnt)
     261a:	30 91 03 20 	lds	r19, 0x2003	; 0x802003 <__malloc_heap_start+0x1>
     261e:	20 93 aa 22 	sts	0x22AA, r18	; 0x8022aa <__brkval>
     2622:	30 93 ab 22 	sts	0x22AB, r19	; 0x8022ab <__brkval+0x1>
-    2626:	20 91 00 20 	lds	r18, 0x2000	; 0x802000 <__DATA_REGION_ORIGIN__>
-    262a:	30 91 01 20 	lds	r19, 0x2001	; 0x802001 <__DATA_REGION_ORIGIN__+0x1>
+    2626:	20 91 00 20 	lds	r18, 0x2000	; 0x802000 <__data_start>
+    262a:	30 91 01 20 	lds	r19, 0x2001	; 0x802001 <__data_start+0x1>
     262e:	21 15       	cp	r18, r1
     2630:	31 05       	cpc	r19, r1
     2632:	41 f4       	brne	.+16     	; 0x2644 <malloc+0xea>

@@ -272,7 +272,6 @@ uint8_t get_note_buttons()
 	//need to flip the order
 	uint8_t flipped = ((buttons & 0x01) << 3) | ((buttons & 0x02) << 1) | ((buttons & 0x04) >> 1) | ((buttons & 0x08) >> 3);
 	return flipped;
-	
 }
 
 uint8_t check_play_note()
